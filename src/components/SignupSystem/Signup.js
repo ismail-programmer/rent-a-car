@@ -5,6 +5,7 @@ const users = JSON.parse(localStorage.getItem("users")) || [];
 
 class User {
   constructor(name, email, password) {
+    this.id = Math.random().toString(36).substr (2, 9)
     this.name = name;
     this.email = email;
     this.password = password;
@@ -91,7 +92,7 @@ class Signup extends Component {
                   </h4>
 
                   <div>
-                    <form action="/admin/login" method="POST">
+                    <form action="/admin/login" method="GET">
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">

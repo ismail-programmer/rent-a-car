@@ -114,7 +114,7 @@ class Login extends Component {
                   </h6>
                   <div className="divider row"></div>
                   <div>
-                    <form className="" method="POST" action="/admin/dashboard">
+                    <form className="" method="GET" action="/admin/dashboard">
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">
