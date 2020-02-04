@@ -19,7 +19,23 @@
 /*------------------------------------------------------------------------------
  * Helpers
  *----------------------------------------------------------------------------*/
-.fancytree-helper-hidden {
+
+
+/* My css */
+.red{
+  color:red
+}
+
+
+
+
+
+
+
+
+
+
+ .fancytree-helper-hidden {
   display: none;
 }
 .fancytree-helper-indeterminate-cb {

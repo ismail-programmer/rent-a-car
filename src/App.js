@@ -1,24 +1,37 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 //components
-import Signup from './components/SignupSystem/Signup'
-import Login from "./components/LoginSystem/Login";
-import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
+// ! for admin only
+import Admin_Signup from "./components/Admin/SignupSystem/Signup";
+import Admin_Login from "./components/Admin/LoginSystem/Login";
+import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 
+import Home from "./components/Home/Home";
 
+//? for user only
+import User_Signup from "./components/User_Signup/Signup";
+import User_Login from "./components/User_Login/Login";
 
 //css
-import './App.css'
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-   <BrowserRouter>
-      <Route exact path="/admin/signup" component={Signup} />
-      <Route exact path="/admin/login" component={Login} />
-      <Route exact path="/admin/dashboard" component={AdminDashboard} />
-      <Route exact path="/" component={App} />
-    </BrowserRouter>
+      <BrowserRouter>
+        {/*! route for admin */}
+
+        <Route exact path="/admin/signup" component={Admin_Signup} />
+        <Route exact path="/admin/login" component={Admin_Login} />
+        <Route exact path="/admin/dashboard" component={AdminDashboard} />
+
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/" component={Home} />
+
+        {/* Route for User */}
+        <Route exact path="/signup" component={User_Signup} />
+        <Route exact path="/login" component={User_Login} />
+      </BrowserRouter>
     </div>
   );
 }

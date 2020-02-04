@@ -53,49 +53,7 @@ class Login extends Component {
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <div
-                        className="h-100 d-flex justify-content-center align-items-center bg-premium-dark"
-                        tabIndex="-1"
-                      >
-                        <div
-                          className="slide-img-bg"
-                          style={{
-                            backgroundImage:
-                              "url('../../resources/assets/images/originals/citynights.jpg')"
-                          }}
-                        ></div>
-                        <div className="slider-content">
-                          <h3>Scalable, Modular, Consistent</h3>
-                          <p>
-                            Easily exclude the components you don't require.
-                            Lightweight, consistent Bootstrap based styles
-                            across all elements and components
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="h-100 d-flex justify-content-center align-items-center bg-sunny-morning"
-                        tabIndex="-1"
-                      >
-                        <div
-                          className="slide-img-bg"
-                          style={{
-                            backgroundImage:
-                              "url('../../resources/assets/images/originals/citydark.jpg')"
-                          }}
-                        ></div>
-                        <div className="slider-content">
-                          <h3>Complex, but lightweight</h3>
-                          <p>
-                            We've included a lot of components that cover almost
-                            all use cases for any type of application.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  
                   </div>
                 </div>
               </div>
@@ -103,7 +61,7 @@ class Login extends Component {
                 <div className="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
                   <div className="app-logo"></div>
                   <h4 className="mb-0">
-                    <span className="d-block">Welcome back,</span>
+                    <span className="d-block">Welcome back Admin,</span>
                     <span>Please sign in to your account.</span>
                   </h4>
                   <h6 className="mt-3">
@@ -114,7 +72,7 @@ class Login extends Component {
                   </h6>
                   <div className="divider row"></div>
                   <div>
-                    <form className="" method="GET" action="/admin/dashboard">
+                    <form className=""  action="/admin/dashboard">
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">
@@ -122,7 +80,7 @@ class Login extends Component {
                               Email
                             </label>
                             <input
-                              name="email"
+                              // name="email"
                               id="exampleEmail"
                               placeholder="Email here..."
                               type="email"
@@ -138,7 +96,7 @@ class Login extends Component {
                               Password
                             </label>
                             <input
-                              name="password"
+                              // name="password"
                               id="examplePassword"
                               placeholder="Password here..."
                               type="password"

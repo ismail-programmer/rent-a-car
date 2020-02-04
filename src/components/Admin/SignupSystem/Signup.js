@@ -83,16 +83,16 @@ class Signup extends Component {
                 <div className="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
                   <div className="app-logo" ></div>
                   <h4>
-                    <div>Welcome,</div>
+                    <div>Welcome back Admin,</div>
                     <span>
                       It only takes a{" "}
                       <span className="text-success">few seconds</span> to
-                      create your account
+                      create your account as a Admin.
                     </span>
                   </h4>
 
                   <div>
-                    <form action="/admin/login" method="GET">
+                    <form action="/admin/login" >
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">
@@ -100,7 +100,7 @@ class Signup extends Component {
                               <span className="text-danger">*</span> Email
                             </label>
                             <input
-                              name="email"
+                              // name="email"
                               id="exampleEmail"
                               placeholder="Email here..."
                               type="email"
@@ -117,7 +117,7 @@ class Signup extends Component {
                             </label>
                             <input
                               ref="name"
-                              name="text"
+                              // name="text"
                               id="exampleName"
                               placeholder="Name here..."
                               type="text"
@@ -133,7 +133,7 @@ class Signup extends Component {
                             </label>
                             <input
                               ref="password"
-                              name="password"
+                              // name="password"
                               id="examplePassword"
                               placeholder="Password here..."
                               type="password"
@@ -150,7 +150,7 @@ class Signup extends Component {
                             </label>
                             <input
                               ref="confirmPassword"
-                              name="passwordrep"
+                              // name="passwordrep"
                               id="examplePasswordRep"
                               placeholder="Repeat Password here..."
                               type="password"
