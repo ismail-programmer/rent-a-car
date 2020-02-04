@@ -65,7 +65,7 @@ class Signup extends Component {
     ) {
       let user = new User(name, email, password);
       users.push(user);
-      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("admin", JSON.stringify(users));
       return true;
     }
     return false;

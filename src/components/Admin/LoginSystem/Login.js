@@ -5,12 +5,12 @@ class Login extends Component {
   isCorrect = e => {
     const email = this.refs.email.value;
     const password = this.refs.password.value;
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const users = JSON.parse(localStorage.getItem("admin")) || [];
     const index = users.findIndex(el => email === el.email);
     if (index !== -1) {
       if (users[index].password === password) {
         this.refs.chkEmail.style.display = `none`;
-        localStorage.setItem("userIndex", JSON.stringify(index));
+        localStorage.setItem("adminIndex", JSON.stringify(index));
         return true;
       }
       this.refs.chkPass.innerHTML = "password is incorrect";

@@ -11,17 +11,19 @@ class Home extends Component {
             <div className="app-sidebar-wrapper">
               <div className="app-sidebar sidebar-shadow">
                 <div className="app-header__logo">
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     data-toggle="tooltip"
                     data-placement="bottom"
                     title="KeroUI Admin Template"
                     className="logo-src"
-                  ></a>
+                  ></Link>
                 </div>
                 <div className="scrollbar-sidebar scrollbar-container">
                   <div className="app-sidebar__inner">
-                    
+                    <Link to="/admin/adding_car">Add Vechile</Link>
+                    <br/>
+                    <Link to="/admin/cars_details">All Vechile</Link>
                   </div>
                 </div>
               </div>
@@ -32,7 +34,7 @@ class Home extends Component {
                 <div className="header-mobile-wrapper">
                   <div className="app-header__logo">
                     <a
-                      href="#"
+                      to="/"
                       data-toggle="tooltip"
                       data-placement="bottom"
                       title="KeroUI Admin Template"
@@ -131,7 +133,7 @@ class Home extends Component {
                                   role="tab"
                                   className="nav-link active"
                                   data-toggle="tab"
-                                  href="#tab-messages-header"
+                                  to="/tab-messages-header"
                                 >
                                   <span>Messages</span>
                                 </a>
@@ -141,7 +143,7 @@ class Home extends Component {
                                   role="tab"
                                   className="nav-link"
                                   data-toggle="tab"
-                                  href="#tab-events-header"
+                                  to="/#tab-events-header"
                                 >
                                   <span>Events</span>
                                 </a>
@@ -151,7 +153,7 @@ class Home extends Component {
                                   role="tab"
                                   className="nav-link"
                                   data-toggle="tab"
-                                  href="#tab-errors-header"
+                                  to="/tab-errors-header"
                                 >
                                   <span>System</span>
                                 </a>
@@ -379,7 +381,7 @@ class Home extends Component {
                                               <p>
                                                 Lorem ipsum dolor sic amet,
                                                 today at{" "}
-                                                <a href="#">
+                                                <a to="/">
                                                   12:00 PM
                                                 </a>
                                               </p>
@@ -467,7 +469,7 @@ class Home extends Component {
                                               <p>
                                                 Lorem ipsum dolor sic amet,
                                                 today at{" "}
-                                                <a href="#">
+                                                <a to="/">
                                                   12:00 PM
                                                 </a>
                                               </p>
@@ -665,7 +667,7 @@ class Home extends Component {
                                       </li>
                                       <li className="nav-item">
                                         <a
-                                          href="#"
+                                          to="/"
                                           className="nav-link"
                                         >
                                           Chat
@@ -676,7 +678,7 @@ class Home extends Component {
                                       </li>
                                       <li className="nav-item">
                                         <a
-                                          href="#"
+                                          to="/"
                                           className="nav-link"
                                         >
                                           Recover Password
@@ -687,7 +689,7 @@ class Home extends Component {
                                       </li>
                                       <li className="nav-item">
                                         <a
-                                          href="#"
+                                          to="/"
                                           className="nav-link"
                                         >
                                           Settings
@@ -698,7 +700,7 @@ class Home extends Component {
                                       </li>
                                       <li className="nav-item">
                                         <a
-                                          href="#"
+                                          to="/"
                                           className="nav-link"
                                         >
                                           Messages
@@ -709,7 +711,7 @@ class Home extends Component {
                                       </li>
                                       <li className="nav-item">
                                         <a
-                                          href="#"
+                                          to="/"
                                           className="nav-link"
                                         >
                                           Logs
@@ -759,11 +761,11 @@ class Home extends Component {
                     <div className="inner-bar-left">
                       <ul className="nav">
                         <li className="nav-item">
-                          <a href="#" className="nav-link show-menu-btn">
+                          <a to="/#" className="nav-link show-menu-btn">
                             <i className="fa fa-align-left mr-2"></i>
                             <span className="hide-text-md">Show page menu</span>
                           </a>
-                          <a href="#" className="nav-link close-menu-btn">
+                          <a to="/#" className="nav-link close-menu-btn">
                             <i className="fa fa-align-right mr-2"></i>
                             <span className="hide-text-md">
                               Close page menu
@@ -779,7 +781,7 @@ class Home extends Component {
                             role="tab"
                             data-toggle="tab"
                             className="nav-link active"
-                            href="#tab-content-0"
+                            to="/#tab-content-0"
                           >
                             <span>Overview</span>
                           </a>
@@ -789,7 +791,7 @@ class Home extends Component {
                             role="tab"
                             data-toggle="tab"
                             className="nav-link"
-                            href="#tab-content-1"
+                            to="/#tab-content-1"
                           >
                             <span>Audiences</span>
                           </a>
@@ -799,7 +801,7 @@ class Home extends Component {
                             role="tab"
                             data-toggle="tab"
                             className="nav-link"
-                            href="#tab-content-2"
+                            to="/#tab-content-2"
                           >
                             <span>Demographics</span>
                           </a>
@@ -867,7 +869,7 @@ class Home extends Component {
                       <ul className="nav">
                         <li className="nav-item">
                           <a
-                            href="#"
+                            to="/#"
                             className="nav-link open-right-drawer"
                           >
                             <span className="hide-text-md">
@@ -888,49 +890,49 @@ class Home extends Component {
                           </div>
                           <a
                             className="dropdown-item"
-                            href="analytics-dashboard.html"
+                            to="/analytics-dashboard.html"
                           >
                             Analytics
                           </a>
                           <a
                             className="dropdown-item"
-                            href="management-dashboard.html"
+                            to="/management-dashboard.html"
                           >
                             Management
                           </a>
                           <a
                             className="dropdown-item"
-                            href="advertisement-dashboard.html"
+                            to="/advertisement-dashboard.html"
                           >
                             Advertisement
                           </a>
-                          <a className="dropdown-item" href="index-2.html">
+                          <a className="dropdown-item" to="/index-2.html">
                             Helpdesk
                           </a>
                           <a
                             className="dropdown-item"
-                            href="monitoring-dashboard.html"
+                            to="/monitoring-dashboard.html"
                           >
                             Monitoring
                           </a>
                           <a
                             className="dropdown-item"
-                            href="crypto-dashboard.html"
+                            to="/crypto-dashboard.html"
                           >
                             Cryptocurrency
                           </a>
-                          <a className="dropdown-item" href="pm-dashboard.html">
+                          <a className="dropdown-item" to="/pm-dashboard.html">
                             Project Management
                           </a>
                           <a
                             className="dropdown-item active"
-                            href="product-dashboard.html"
+                            to="/product-dashboard.html"
                           >
                             Product
                           </a>
                           <a
                             className="dropdown-item"
-                            href="statistics-dashboard.html"
+                            to="/statistics-dashboard.html"
                           >
                             Statistics
                           </a>
@@ -945,7 +947,7 @@ class Home extends Component {
                               <a
                                 role="tab"
                                 className="nav-link active show"
-                                href="#"
+                                to="/#"
                                 aria-selected="true"
                               >
                                 <span>Sales</span>
@@ -955,7 +957,7 @@ class Home extends Component {
                               <a
                                 role="tab"
                                 className="nav-link"
-                                href="#"
+                                to="/#"
                                 aria-selected="false"
                               >
                                 <span>Activity</span>
@@ -965,7 +967,7 @@ class Home extends Component {
                               <a
                                 role="tab"
                                 className="nav-link"
-                                href="#"
+                                to="/#"
                                 aria-selected="false"
                               >
                                 <span>Profile</span>
@@ -975,7 +977,7 @@ class Home extends Component {
                               <a
                                 role="tab"
                                 className="nav-link"
-                                href="#"
+                                to="/#"
                                 aria-selected="false"
                               >
                                 <span>Accounts</span>
@@ -1152,7 +1154,7 @@ class Home extends Component {
                               <ul className="nav nav-justified">
                                 <li className="nav-item">
                                   <a
-                                    href="#tab-minimal-1"
+                                    to="/#tab-minimal-1"
                                     data-toggle="tab"
                                     className="nav-link minimal-tab-btn-1"
                                   >
@@ -1169,7 +1171,7 @@ class Home extends Component {
                                 </li>
                                 <li className="nav-item">
                                   <a
-                                    href="#tab-minimal-2"
+                                    to="/#tab-minimal-2"
                                     data-toggle="tab"
                                     className="nav-link active minimal-tab-btn-2"
                                   >
@@ -1186,7 +1188,7 @@ class Home extends Component {
                                 </li>
                                 <li className="nav-item">
                                   <a
-                                    href="#tab-minimal-3"
+                                    to="/#tab-minimal-3"
                                     data-toggle="tab"
                                     className="nav-link minimal-tab-btn-3"
                                   >
@@ -1362,7 +1364,7 @@ class Home extends Component {
                                               </li>
                                               <li className="nav-item">
                                                 <a
-                                                  href="#"
+                                                  to="/#"
                                                   className="nav-link"
                                                 >
                                                   Chat
@@ -1373,7 +1375,7 @@ class Home extends Component {
                                               </li>
                                               <li className="nav-item">
                                                 <a
-                                                  href="#"
+                                                  to="/#"
                                                   className="nav-link"
                                                 >
                                                   Recover Password
@@ -1384,7 +1386,7 @@ class Home extends Component {
                                               </li>
                                               <li className="nav-item">
                                                 <a
-                                                  href="#"
+                                                  to="/#"
                                                   className="nav-link"
                                                 >
                                                   Settings
@@ -1395,7 +1397,7 @@ class Home extends Component {
                                               </li>
                                               <li className="nav-item">
                                                 <a
-                                                  href="#"
+                                                  to="/#"
                                                   className="nav-link"
                                                 >
                                                   Messages
@@ -1406,7 +1408,7 @@ class Home extends Component {
                                               </li>
                                               <li className="nav-item">
                                                 <a
-                                                  href="#"
+                                                  to="/#"
                                                   className="nav-link"
                                                 >
                                                   Logs
@@ -1436,7 +1438,7 @@ class Home extends Component {
                                         <button
                                           type="button"
                                           data-toggle="tab"
-                                          href="#tab-content-income"
+                                          to="/#tab-content-income"
                                           className="btn-pill pl-3 active btn btn-focus"
                                         >
                                           Income
@@ -1444,7 +1446,7 @@ class Home extends Component {
                                         <button
                                           type="button"
                                           data-toggle="tab"
-                                          href="#tab-content-expenses"
+                                          to="/#tab-content-expenses"
                                           className="btn-pill pr-3  btn btn-focus"
                                         >
                                           Expenses
@@ -1821,12 +1823,12 @@ class Home extends Component {
                                       />
                                     </td>
                                     <td className="text-center">
-                                      <a href="#">
+                                      <a to="/#">
                                         Juan C. Cargill
                                       </a>
                                     </td>
                                     <td className="text-center">
-                                      <a href="#">
+                                      <a to="/#">
                                         Micro Electronics
                                       </a>
                                     </td>
@@ -1902,12 +1904,12 @@ class Home extends Component {
                                       />
                                     </td>
                                     <td className="text-center">
-                                      <a href="#">
+                                      <a to="/#">
                                         Johnathan Phelan
                                       </a>
                                     </td>
                                     <td className="text-center">
-                                      <a href="#">
+                                      <a to="/#">
                                         Hatchworks
                                       </a>
                                     </td>
@@ -1983,12 +1985,12 @@ class Home extends Component {
                                       />
                                     </td>
                                     <td className="text-center">
-                                      <a href="#">
+                                      <a to="/#">
                                         Darrell Lowe
                                       </a>
                                     </td>
                                     <td className="text-center">
-                                      <a href="#">
+                                      <a to="/#">
                                         Riddle Electronics
                                       </a>
                                     </td>
@@ -2063,12 +2065,12 @@ class Home extends Component {
                                       />
                                     </td>
                                     <td className="text-center">
-                                      <a href="#">
+                                      <a to="/#">
                                         George T. Cottrell
                                       </a>
                                     </td>
                                     <td className="text-center">
-                                      <a href="#">
+                                      <a to="/#">
                                         Pixelcloud
                                       </a>
                                     </td>
@@ -2303,7 +2305,7 @@ class Home extends Component {
                                     role="tab"
                                     className="nav-link active"
                                     data-toggle="tab"
-                                    href="#tab-messages-header1"
+                                    to="/#tab-messages-header1"
                                   >
                                     <span>Messages</span>
                                   </a>
@@ -2313,7 +2315,7 @@ class Home extends Component {
                                     role="tab"
                                     className="nav-link"
                                     data-toggle="tab"
-                                    href="#tab-events-header1"
+                                    to="/#tab-events-header1"
                                   >
                                     <span>Events</span>
                                   </a>
@@ -2323,7 +2325,7 @@ class Home extends Component {
                                     role="tab"
                                     className="nav-link"
                                     data-toggle="tab"
-                                    href="#tab-errors-header1"
+                                    to="/#tab-errors-header1"
                                   >
                                     <span>System</span>
                                   </a>
@@ -2551,7 +2553,7 @@ class Home extends Component {
                                                 <p>
                                                   Lorem ipsum dolor sic amet,
                                                   today at{" "}
-                                                  <a href="#">
+                                                  <a to="/#">
                                                     12:00 PM
                                                   </a>
                                                 </p>
@@ -2639,7 +2641,7 @@ class Home extends Component {
                                                 <p>
                                                   Lorem ipsum dolor sic amet,
                                                   today at{" "}
-                                                  <a href="#">
+                                                  <a to="/#">
                                                     12:00 PM
                                                   </a>
                                                 </p>
@@ -2863,7 +2865,7 @@ class Home extends Component {
                                           </li>
                                           <li className="nav-item">
                                             <a
-                                              href="#"
+                                              to="/#"
                                               className="nav-link"
                                             >
                                               <i className="nav-link-icon lnr-inbox">
@@ -2874,7 +2876,7 @@ class Home extends Component {
                                           </li>
                                           <li className="nav-item">
                                             <a
-                                              href="#"
+                                              to="/#"
                                               className="nav-link"
                                             >
                                               <i className="nav-link-icon lnr-book">
@@ -2888,7 +2890,7 @@ class Home extends Component {
                                           </li>
                                           <li className="nav-item">
                                             <a
-                                              href="#"
+                                              to="/#"
                                               className="nav-link"
                                             >
                                               <i className="nav-link-icon lnr-picture">
@@ -2900,7 +2902,7 @@ class Home extends Component {
                                           <li className="nav-item">
                                             <a
                                               disabled=""
-                                              href="#"
+                                              to="/#"
                                               className="nav-link disabled"
                                             >
                                               <i className="nav-link-icon lnr-file-empty">
@@ -2918,7 +2920,7 @@ class Home extends Component {
                                           </li>
                                           <li className="nav-item">
                                             <a
-                                              href="#"
+                                              to="/#"
                                               className="nav-link"
                                             >
                                               Queues
@@ -2926,7 +2928,7 @@ class Home extends Component {
                                           </li>
                                           <li className="nav-item">
                                             <a
-                                              href="#"
+                                              to="/#"
                                               className="nav-link"
                                             >
                                               Resource Groups
@@ -2934,7 +2936,7 @@ class Home extends Component {
                                           </li>
                                           <li className="nav-item">
                                             <a
-                                              href="#"
+                                              to="/#"
                                               className="nav-link"
                                             >
                                               Goal Metrics
@@ -2945,7 +2947,7 @@ class Home extends Component {
                                           </li>
                                           <li className="nav-item">
                                             <a
-                                              href="#"
+                                              to="/#"
                                               className="nav-link"
                                             >
                                               Campaigns
