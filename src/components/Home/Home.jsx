@@ -21,6 +21,11 @@ class Home extends Component {
                   Please Login
                 </Link>
               </div>
+              <div className="col s6">
+                <Link to="/admin/login" className="nav-link">
+                 For admin Only
+                </Link>
+              </div>
             </div>
           </div>
         </div>
