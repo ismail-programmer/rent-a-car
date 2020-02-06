@@ -92,7 +92,7 @@ class Signup extends Component {
                   </h4>
 
                   <div>
-                    <form action="/admin/login" >
+                    <form action="/login" >
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">

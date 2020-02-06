@@ -1,26 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-const cars = JSON.parse(localStorage.getItem("carDetails"));
-class carsDetails extends Component {
-  state={
-    cars: []
-  }
-  componentDidMount(){
-    this.setState({cars: JSON.parse(localStorage.getItem("carDetails"))})
-  }
-  showTable = () =>{
-    return this.state.cars.map((el, i) => (
-      <tr key={i}>
-        <th>{i + 1}</th>
-        <td>{el.id}</td>
-        <td>{el.owner}</td>
-        <td>{el.model}</td>
-        <td>{el.num}</td>
-        <td>
-          <Link className="btn-wide btn-pill btn-shadow btn-hover-shine btn btn-primary btn-lg" to={`/admin/edit_car/${i}`}>Edit Details</Link>
-        </td>
-      </tr>
-    ));}
+class user_dashboard extends Component {
   render() {
     return (
       <div>
@@ -49,8 +29,7 @@ class carsDetails extends Component {
                   <div className="app-sidebar__inner">
                     <ul className="vertical-nav-menu">
                       <li>
-                        <Link to="/admin/dashboard">Dashboard</Link>
-                        <Link to="/admin/adding_car">Add Car</Link>
+                        <Link to="/user/booking">Book a Ride</Link>
                       </li>
                     </ul>
                   </div>
@@ -97,10 +76,8 @@ class carsDetails extends Component {
                     style={{ margin: "0 auto", textAlign: "center" }}
                   >
                     <div className="page-title-heading">
-                      <h2>Cars Details</h2>
-                      <div className="page-title-subheading">
-                        Here You find all the Cars of our Website.
-                      </div>
+                      <h2>Heading</h2>
+                      <div className="page-title-subheading">Heading div</div>
                     </div>
                   </div>
                 </div>
@@ -110,21 +87,8 @@ class carsDetails extends Component {
                 >
                   <div className="card-body">
                     <h5 className="card-title">
-                      <b>Cars</b>
+                      <b>Heading 2</b>
                     </h5>
-                    <table className="mb-0 table">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Vechile id</th>
-                          <th>Owner Name</th>
-                          <th>Model Name</th>
-                          <th>Vechile Num</th>
-                          <th>Tools</th>
-                        </tr>
-                      </thead>
-                      <tbody>{this.showTable()}</tbody>
-                    </table>
                   </div>
                 </div>
               </div>
@@ -138,4 +102,4 @@ class carsDetails extends Component {
   }
 }
 
-export default carsDetails;
+export default user_dashboard;

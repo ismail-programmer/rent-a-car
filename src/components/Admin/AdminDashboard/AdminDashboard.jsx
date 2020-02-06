@@ -22,7 +22,7 @@ class Home extends Component {
                 <div className="scrollbar-sidebar scrollbar-container">
                   <div className="app-sidebar__inner">
                     <Link to="/admin/adding_car">Add Vechile</Link>
-                    <br/>
+                    <br />
                     <Link to="/admin/cars_details">All Vechile</Link>
                   </div>
                 </div>
@@ -49,8 +49,7 @@ class Home extends Component {
                       </span>
                     </button>
                     <div className="app-header__menu">
-                      <span>
-                      </span>
+                      <span></span>
                     </div>
                   </div>
                 </div>
@@ -64,13 +63,11 @@ class Home extends Component {
                   </div>
                   <div className="app-header-right">
                     <div className="search-wrapper">
-                      
                       <input type="text" placeholder="Search..." />
                     </div>
                     <div className="header-btn-lg pr-0">
                       <div className="header-dots">
                         <div className="dropdown">
-                          
                           <div
                             tabIndex="-1"
                             role="menu"
@@ -81,7 +78,10 @@ class Home extends Component {
                               <div className="dropdown-menu-header-inner bg-vicious-stance">
                                 <div
                                   className="menu-header-image opacity-4"
-                                  style={{backgroundImage: "url('assets/images/dropdown-header/city5.jpg')"}}
+                                  style={{
+                                    backgroundImage:
+                                      "url('assets/images/dropdown-header/city5.jpg')"
+                                  }}
                                 ></div>
                                 <div className="menu-header-content text-white">
                                   <h5 className="menu-header-title">
@@ -93,7 +93,7 @@ class Home extends Component {
                                 </div>
                               </div>
                             </div>
-                            
+
                             <ul className="nav flex-column">
                               <li className="nav-item-divider nav-item"></li>
                               <li className="nav-item-btn text-center nav-item">
@@ -115,7 +115,10 @@ class Home extends Component {
                               <div className="dropdown-menu-header-inner bg-night-sky">
                                 <div
                                   className="menu-header-image opacity-5"
-                                  style={{backgroundImage: "url('assets/images/dropdown-header/city2.jpg')"}}
+                                  style={{
+                                    backgroundImage:
+                                      "url('assets/images/dropdown-header/city2.jpg')"
+                                  }}
                                 ></div>
                                 <div className="menu-header-content text-light">
                                   <h5 className="menu-header-title">
@@ -380,10 +383,7 @@ class Home extends Component {
                                               </h4>
                                               <p>
                                                 Lorem ipsum dolor sic amet,
-                                                today at{" "}
-                                                <a to="/">
-                                                  12:00 PM
-                                                </a>
+                                                today at <a to="/">12:00 PM</a>
                                               </p>
                                               <span className="vertical-timeline-element-date"></span>
                                             </div>
@@ -468,10 +468,7 @@ class Home extends Component {
                                               </h4>
                                               <p>
                                                 Lorem ipsum dolor sic amet,
-                                                today at{" "}
-                                                <a to="/">
-                                                  12:00 PM
-                                                </a>
+                                                today at <a to="/">12:00 PM</a>
                                               </p>
                                               <span className="vertical-timeline-element-date"></span>
                                             </div>
@@ -559,18 +556,27 @@ class Home extends Component {
                                       <div className="swal2-icon swal2-success swal2-animate-success-icon">
                                         <div
                                           className="swal2-success-circular-line-left"
-                                          style= {{backgroundColor:" rgb(255, 255, 255)"}}
+                                          style={{
+                                            backgroundColor:
+                                              " rgb(255, 255, 255)"
+                                          }}
                                         ></div>
                                         <span className="swal2-success-line-tip"></span>
                                         <span className="swal2-success-line-long"></span>
                                         <div className="swal2-success-ring"></div>
                                         <div
                                           className="swal2-success-fix"
-                                          style= {{backgroundColor:" rgb(255, 255, 255)"}}
+                                          style={{
+                                            backgroundColor:
+                                              " rgb(255, 255, 255)"
+                                          }}
                                         ></div>
                                         <div
                                           className="swal2-success-circular-line-right"
-                                           style= {{backgroundColor:"rgb(255, 255, 255)"}}
+                                          style={{
+                                            backgroundColor:
+                                              "rgb(255, 255, 255)"
+                                          }}
                                         ></div>
                                       </div>
                                       <div className="results-subtitle">
@@ -625,7 +631,10 @@ class Home extends Component {
                                   <div className="dropdown-menu-header-inner bg-info">
                                     <div
                                       className="menu-header-image opacity-2"
-                                       style={{backgroundImage: "url('assets/images/dropdown-header/city1.jpg')"}}
+                                      style={{
+                                        backgroundImage:
+                                          "url('assets/images/dropdown-header/city1.jpg')"
+                                      }}
                                     ></div>
                                     <div className="menu-header-content text-left">
                                       <div className="widget-content p-0">
@@ -658,7 +667,7 @@ class Home extends Component {
                                 </div>
                                 <div
                                   className="scroll-area-xs"
-                                  style={{height: "150px"}}
+                                  style={{ height: "150px" }}
                                 >
                                   <div className="scrollbar-container ps">
                                     <ul className="nav flex-column">
@@ -666,10 +675,7 @@ class Home extends Component {
                                         Activity
                                       </li>
                                       <li className="nav-item">
-                                        <a
-                                          to="/"
-                                          className="nav-link"
-                                        >
+                                        <a to="/" className="nav-link">
                                           Chat
                                           <div className="ml-auto badge badge-pill badge-info">
                                             8
@@ -677,10 +683,7 @@ class Home extends Component {
                                         </a>
                                       </li>
                                       <li className="nav-item">
-                                        <a
-                                          to="/"
-                                          className="nav-link"
-                                        >
+                                        <a to="/" className="nav-link">
                                           Recover Password
                                         </a>
                                       </li>
@@ -688,10 +691,7 @@ class Home extends Component {
                                         My Account
                                       </li>
                                       <li className="nav-item">
-                                        <a
-                                          to="/"
-                                          className="nav-link"
-                                        >
+                                        <a to="/" className="nav-link">
                                           Settings
                                           <div className="ml-auto badge badge-success">
                                             New
@@ -699,10 +699,7 @@ class Home extends Component {
                                         </a>
                                       </li>
                                       <li className="nav-item">
-                                        <a
-                                          to="/"
-                                          className="nav-link"
-                                        >
+                                        <a to="/" className="nav-link">
                                           Messages
                                           <div className="ml-auto badge badge-warning">
                                             512
@@ -710,10 +707,7 @@ class Home extends Component {
                                         </a>
                                       </li>
                                       <li className="nav-item">
-                                        <a
-                                          to="/"
-                                          className="nav-link"
-                                        >
+                                        <a to="/" className="nav-link">
                                           Logs
                                         </a>
                                       </li>
@@ -868,10 +862,7 @@ class Home extends Component {
                     <div className="inner-bar-right">
                       <ul className="nav">
                         <li className="nav-item">
-                          <a
-                            to="/#"
-                            className="nav-link open-right-drawer"
-                          >
+                          <a to="/#" className="nav-link open-right-drawer">
                             <span className="hide-text-md">
                               Show right drawer
                             </span>
@@ -1239,7 +1230,7 @@ class Home extends Component {
                                                 aria-valuenow="65"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"
-                                                style={{width: "65%"}}
+                                                style={{ width: "65%" }}
                                               ></div>
                                             </div>
                                             <div className="progress-sub-label">
@@ -1269,7 +1260,7 @@ class Home extends Component {
                                                 aria-valuenow="22"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"
-                                                style={{width:" 22%"}}
+                                                style={{ width: " 22%" }}
                                               ></div>
                                             </div>
                                             <div className="progress-sub-label">
@@ -1299,7 +1290,7 @@ class Home extends Component {
                                                 aria-valuenow="83"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"
-                                                style={{width: "83%"}}
+                                                style={{ width: "83%" }}
                                               ></div>
                                             </div>
                                             <div className="progress-sub-label">
@@ -1342,7 +1333,10 @@ class Home extends Component {
                                           <div className="dropdown-menu-header-inner bg-primary">
                                             <div
                                               className="menu-header-image"
-                                               style={{backgroundImage: "url('assets/images/dropdown-header/abstract2.jg}}')"}}
+                                              style={{
+                                                backgroundImage:
+                                                  "url('assets/images/dropdown-header/abstract2.jg}}')"
+                                              }}
                                             ></div>
                                             <div className="menu-header-content">
                                               <div>
@@ -1363,10 +1357,7 @@ class Home extends Component {
                                                 Activity
                                               </li>
                                               <li className="nav-item">
-                                                <a
-                                                  to="/#"
-                                                  className="nav-link"
-                                                >
+                                                <a to="/#" className="nav-link">
                                                   Chat
                                                   <div className="ml-auto badge badge-pill badge-info">
                                                     8
@@ -1374,10 +1365,7 @@ class Home extends Component {
                                                 </a>
                                               </li>
                                               <li className="nav-item">
-                                                <a
-                                                  to="/#"
-                                                  className="nav-link"
-                                                >
+                                                <a to="/#" className="nav-link">
                                                   Recover Password
                                                 </a>
                                               </li>
@@ -1385,10 +1373,7 @@ class Home extends Component {
                                                 My Account
                                               </li>
                                               <li className="nav-item">
-                                                <a
-                                                  to="/#"
-                                                  className="nav-link"
-                                                >
+                                                <a to="/#" className="nav-link">
                                                   Settings
                                                   <div className="ml-auto badge badge-success">
                                                     New
@@ -1396,10 +1381,7 @@ class Home extends Component {
                                                 </a>
                                               </li>
                                               <li className="nav-item">
-                                                <a
-                                                  to="/#"
-                                                  className="nav-link"
-                                                >
+                                                <a to="/#" className="nav-link">
                                                   Messages
                                                   <div className="ml-auto badge badge-warning">
                                                     512
@@ -1407,10 +1389,7 @@ class Home extends Component {
                                                 </a>
                                               </li>
                                               <li className="nav-item">
-                                                <a
-                                                  to="/#"
-                                                  className="nav-link"
-                                                >
+                                                <a to="/#" className="nav-link">
                                                   Logs
                                                 </a>
                                               </li>
@@ -1423,7 +1402,7 @@ class Home extends Component {
                                 </div>
                                 <div className="card-body p-2">
                                   <div className="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
-                                    <div style={{height: "274px"}}>
+                                    <div style={{ height: "274px" }}>
                                       <div id="chart-combined-tab-3"></div>
                                     </div>
                                   </div>
@@ -1493,7 +1472,7 @@ class Home extends Component {
                                                       aria-valuenow="76"
                                                       aria-valuemin="0"
                                                       aria-valuemax="100"
-                                                      style={{width: "76%"}}
+                                                      style={{ width: "76%" }}
                                                     ></div>
                                                   </div>
                                                   <div className="progress-sub-label">
@@ -1533,7 +1512,7 @@ class Home extends Component {
                                                       aria-valuenow="23"
                                                       aria-valuemin="0"
                                                       aria-valuemax="100"
-                                                      style={{width: "23%"}}
+                                                      style={{ width: "23%" }}
                                                     ></div>
                                                   </div>
                                                   <div className="progress-sub-label">
@@ -1658,7 +1637,7 @@ class Home extends Component {
                                             aria-valuenow="71"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
-                                            style={{width: "71%"}}
+                                            style={{ width: "71%" }}
                                           ></div>
                                         </div>
                                       </div>
@@ -1690,7 +1669,7 @@ class Home extends Component {
                                             aria-valuenow="54"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
-                                            style={{width: "54%"}}
+                                            style={{ width: "54%" }}
                                           ></div>
                                         </div>
                                       </div>
@@ -1722,7 +1701,7 @@ class Home extends Component {
                                             aria-valuenow="32"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
-                                            style={{width: "32%"}}
+                                            style={{ width: "32%" }}
                                           ></div>
                                         </div>
                                       </div>
@@ -1754,7 +1733,7 @@ class Home extends Component {
                                             aria-valuenow="89"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
-                                            style={{width: "89%"}}
+                                            style={{ width: "89%" }}
                                           ></div>
                                         </div>
                                       </div>
@@ -1807,13 +1786,13 @@ class Home extends Component {
                                   <tr>
                                     <td
                                       className="text-center text-muted"
-                                      style={{width: "80px"}}
+                                      style={{ width: "80px" }}
                                     >
                                       #54
                                     </td>
                                     <td
                                       className="text-center"
-                                      style={{width: "80px"}}
+                                      style={{ width: "80px" }}
                                     >
                                       <img
                                         width="40"
@@ -1823,14 +1802,10 @@ class Home extends Component {
                                       />
                                     </td>
                                     <td className="text-center">
-                                      <a to="/#">
-                                        Juan C. Cargill
-                                      </a>
+                                      <a to="/#">Juan C. Cargill</a>
                                     </td>
                                     <td className="text-center">
-                                      <a to="/#">
-                                        Micro Electronics
-                                      </a>
+                                      <a to="/#">Micro Electronics</a>
                                     </td>
                                     <td className="text-center">
                                       <div className="badge badge-pill badge-danger">
@@ -1845,7 +1820,7 @@ class Home extends Component {
                                     </td>
                                     <td
                                       className="text-center"
-                                      style={{width: "200px"}}
+                                      style={{ width: "200px" }}
                                     >
                                       <div className="widget-content p-0">
                                         <div className="widget-content-outer">
@@ -1863,7 +1838,7 @@ class Home extends Component {
                                                   aria-valuenow="71"
                                                   aria-valuemin="0"
                                                   aria-valuemax="100"
-                                                  style={{width: "71%"}}
+                                                  style={{ width: "71%" }}
                                                 ></div>
                                               </div>
                                             </div>
@@ -1888,13 +1863,13 @@ class Home extends Component {
                                   <tr>
                                     <td
                                       className="text-center text-muted"
-                                     style={{width: "80px"}}
+                                      style={{ width: "80px" }}
                                     >
                                       #55
                                     </td>
                                     <td
                                       className="text-center"
-                                     style={{width: "80px"}}
+                                      style={{ width: "80px" }}
                                     >
                                       <img
                                         width="40"
@@ -1904,14 +1879,10 @@ class Home extends Component {
                                       />
                                     </td>
                                     <td className="text-center">
-                                      <a to="/#">
-                                        Johnathan Phelan
-                                      </a>
+                                      <a to="/#">Johnathan Phelan</a>
                                     </td>
                                     <td className="text-center">
-                                      <a to="/#">
-                                        Hatchworks
-                                      </a>
+                                      <a to="/#">Hatchworks</a>
                                     </td>
                                     <td className="text-center">
                                       <div className="badge badge-pill badge-info">
@@ -1926,7 +1897,8 @@ class Home extends Component {
                                     </td>
                                     <td
                                       className="text-center"
-                                     style={{width: "200px"}}>
+                                      style={{ width: "200px" }}
+                                    >
                                       <div className="widget-content p-0">
                                         <div className="widget-content-outer">
                                           <div className="widget-content-wrapper">
@@ -1935,7 +1907,7 @@ class Home extends Component {
                                                 54%
                                               </div>
                                             </div>
-                                                 
+
                                             <div className="widget-content-right w-100">
                                               <div className="progress-bar-xs progress">
                                                 <div
@@ -1944,14 +1916,14 @@ class Home extends Component {
                                                   aria-valuenow="54"
                                                   aria-valuemin="0"
                                                   aria-valuemax="100"
-                                                 style={{width: "54%"}}
+                                                  style={{ width: "54%" }}
                                                 ></div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-                                        </div>
-                                        </td>
+                                      </div>
+                                    </td>
                                     <td className="text-center">
                                       <div
                                         role="group"
@@ -1969,13 +1941,13 @@ class Home extends Component {
                                   <tr>
                                     <td
                                       className="text-center text-muted"
-                                     style={{width: "80px"}}
+                                      style={{ width: "80px" }}
                                     >
                                       #56
                                     </td>
                                     <td
                                       className="text-center"
-                                     style={{width: "80px"}}
+                                      style={{ width: "80px" }}
                                     >
                                       <img
                                         width="40"
@@ -1985,14 +1957,10 @@ class Home extends Component {
                                       />
                                     </td>
                                     <td className="text-center">
-                                      <a to="/#">
-                                        Darrell Lowe
-                                      </a>
+                                      <a to="/#">Darrell Lowe</a>
                                     </td>
                                     <td className="text-center">
-                                      <a to="/#">
-                                        Riddle Electronics
-                                      </a>
+                                      <a to="/#">Riddle Electronics</a>
                                     </td>
                                     <td className="text-center">
                                       <div className="badge badge-pill badge-warning">
@@ -2007,7 +1975,7 @@ class Home extends Component {
                                     </td>
                                     <td
                                       className="text-center"
-                                      style={{width: "200px"}}
+                                      style={{ width: "200px" }}
                                     >
                                       <div className="widget-content p-0">
                                         <div className="widget-content-outer">
@@ -2025,7 +1993,8 @@ class Home extends Component {
                                                   aria-valuenow="97"
                                                   aria-valuemin="0"
                                                   aria-valuemax="100"
-                                                  style={{width: "97%" }}                                               ></div>
+                                                  style={{ width: "97%" }}
+                                                ></div>
                                               </div>
                                             </div>
                                           </div>
@@ -2049,13 +2018,13 @@ class Home extends Component {
                                   <tr>
                                     <td
                                       className="text-center text-muted"
-                                      style={{width: "80px"}}
+                                      style={{ width: "80px" }}
                                     >
                                       #56
                                     </td>
                                     <td
                                       className="text-center"
-                                      style={{width: "80px"}}
+                                      style={{ width: "80px" }}
                                     >
                                       <img
                                         width="40"
@@ -2065,14 +2034,10 @@ class Home extends Component {
                                       />
                                     </td>
                                     <td className="text-center">
-                                      <a to="/#">
-                                        George T. Cottrell
-                                      </a>
+                                      <a to="/#">George T. Cottrell</a>
                                     </td>
                                     <td className="text-center">
-                                      <a to="/#">
-                                        Pixelcloud
-                                      </a>
+                                      <a to="/#">Pixelcloud</a>
                                     </td>
                                     <td className="text-center">
                                       <div className="badge badge-pill badge-success">
@@ -2087,7 +2052,7 @@ class Home extends Component {
                                     </td>
                                     <td
                                       className="text-center"
-                                      style={{width: "200px"}}
+                                      style={{ width: "200px" }}
                                     >
                                       <div className="widget-content p-0">
                                         <div className="widget-content-outer">
@@ -2105,7 +2070,7 @@ class Home extends Component {
                                                   aria-valuenow="88"
                                                   aria-valuemin="0"
                                                   aria-valuemax="100"
-                                                  style={{width:" 88%"}}
+                                                  style={{ width: " 88%" }}
                                                 ></div>
                                               </div>
                                             </div>
@@ -2287,7 +2252,10 @@ class Home extends Component {
                                 <div className="dropdown-menu-header-inner bg-deep-blue">
                                   <div
                                     className="menu-header-image opacity-1"
-                                     style={{backgroundImage: "url('assets/images/dropdown-header/city3.jpg')"}}
+                                    style={{
+                                      backgroundImage:
+                                        "url('assets/images/dropdown-header/city3.jpg')"
+                                    }}
                                   ></div>
                                   <div className="menu-header-content text-dark">
                                     <h5 className="menu-header-title">
@@ -2553,9 +2521,7 @@ class Home extends Component {
                                                 <p>
                                                   Lorem ipsum dolor sic amet,
                                                   today at{" "}
-                                                  <a to="/#">
-                                                    12:00 PM
-                                                  </a>
+                                                  <a to="/#">12:00 PM</a>
                                                 </p>
                                                 <span className="vertical-timeline-element-date"></span>
                                               </div>
@@ -2641,9 +2607,7 @@ class Home extends Component {
                                                 <p>
                                                   Lorem ipsum dolor sic amet,
                                                   today at{" "}
-                                                  <a to="/#">
-                                                    12:00 PM
-                                                  </a>
+                                                  <a to="/#">12:00 PM</a>
                                                 </p>
                                                 <span className="vertical-timeline-element-date"></span>
                                               </div>
@@ -2731,18 +2695,27 @@ class Home extends Component {
                                         <div className="swal2-icon swal2-success swal2-animate-success-icon">
                                           <div
                                             className="swal2-success-circular-line-left"
-                                             style= {{backgroundColor:"rgb(255, 255, 255)"}}
+                                            style={{
+                                              backgroundColor:
+                                                "rgb(255, 255, 255)"
+                                            }}
                                           ></div>
                                           <span className="swal2-success-line-tip"></span>
                                           <span className="swal2-success-line-long"></span>
                                           <div className="swal2-success-ring"></div>
                                           <div
                                             className="swal2-success-fix"
-                                             style= {{backgroundColor:"rgb(255, 255, 255)"}}
+                                            style={{
+                                              backgroundColor:
+                                                "rgb(255, 255, 255)"
+                                            }}
                                           ></div>
                                           <div
                                             className="swal2-success-circular-line-right"
-                                             style= {{backgroundColor:"rgb(255, 255, 255)"}}
+                                            style={{
+                                              backgroundColor:
+                                                "rgb(255, 255, 255)"
+                                            }}
                                           ></div>
                                         </div>
                                         <div className="results-subtitle">
@@ -2789,7 +2762,10 @@ class Home extends Component {
                                 <div className="dropdown-menu-header-inner bg-premium-dark">
                                   <div
                                     className="menu-header-image"
-                                     style={{backgroundImage: "url('assets/images/dropdown-header/abstract4.jg}}')"}}
+                                    style={{
+                                      backgroundImage:
+                                        "url('assets/images/dropdown-header/abstract4.jg}}')"
+                                    }}
                                   ></div>
                                   <div className="menu-header-content text-white">
                                     <h5 className="menu-header-title">
@@ -2864,10 +2840,7 @@ class Home extends Component {
                                             Overview
                                           </li>
                                           <li className="nav-item">
-                                            <a
-                                              to="/#"
-                                              className="nav-link"
-                                            >
+                                            <a to="/#" className="nav-link">
                                               <i className="nav-link-icon lnr-inbox">
                                                 {" "}
                                               </i>
@@ -2875,10 +2848,7 @@ class Home extends Component {
                                             </a>
                                           </li>
                                           <li className="nav-item">
-                                            <a
-                                              to="/#"
-                                              className="nav-link"
-                                            >
+                                            <a to="/#" className="nav-link">
                                               <i className="nav-link-icon lnr-book">
                                                 {" "}
                                               </i>
@@ -2889,10 +2859,7 @@ class Home extends Component {
                                             </a>
                                           </li>
                                           <li className="nav-item">
-                                            <a
-                                              to="/#"
-                                              className="nav-link"
-                                            >
+                                            <a to="/#" className="nav-link">
                                               <i className="nav-link-icon lnr-picture">
                                                 {" "}
                                               </i>
@@ -2919,26 +2886,17 @@ class Home extends Component {
                                             Sales &amp; Marketing
                                           </li>
                                           <li className="nav-item">
-                                            <a
-                                              to="/#"
-                                              className="nav-link"
-                                            >
+                                            <a to="/#" className="nav-link">
                                               Queues
                                             </a>
                                           </li>
                                           <li className="nav-item">
-                                            <a
-                                              to="/#"
-                                              className="nav-link"
-                                            >
+                                            <a to="/#" className="nav-link">
                                               Resource Groups
                                             </a>
                                           </li>
                                           <li className="nav-item">
-                                            <a
-                                              to="/#"
-                                              className="nav-link"
-                                            >
+                                            <a to="/#" className="nav-link">
                                               Goal Metrics
                                               <div className="ml-auto badge badge-warning">
                                                 3
@@ -2946,10 +2904,7 @@ class Home extends Component {
                                             </a>
                                           </li>
                                           <li className="nav-item">
-                                            <a
-                                              to="/#"
-                                              className="nav-link"
-                                            >
+                                            <a to="/#" className="nav-link">
                                               Campaigns
                                             </a>
                                           </li>

@@ -16,7 +16,6 @@ class EditCar extends Component {
     let num = this.refs.num.value;
     let model = this.refs.model.value;
     let owner = this.refs.owner.value;
-    console.log(cars[index],index)
     cars[index].num = num
     cars[index].model = model
     cars[index].owner= owner
@@ -25,6 +24,7 @@ class EditCar extends Component {
   deleteCar = ()=>{
     cars.splice(index,1)
     localStorage.setItem('carDetails', JSON.stringify(cars))
+    
   }
   render () {
     return (

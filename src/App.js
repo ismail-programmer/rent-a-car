@@ -4,16 +4,18 @@ import { BrowserRouter, Route } from "react-router-dom";
 // ! for admin only
 import Admin_Signup from "./components/Admin/SignupSystem/Signup";
 import Admin_Login from "./components/Admin/LoginSystem/Login";
-import AddingCar from "./components/Admin/Cars_Managment/Adding_cars";
-import CarDetails from "./components/Admin/Cars_Managment/carsDetails";
-import EditCars from "./components/Admin/Cars_Managment/Edit_cars";
-import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
+import Adding_Car from "./components/Admin/Cars_Managment/Adding_cars";
+import Car_Details from "./components/Admin/Cars_Managment/carsDetails";
+import Edit_Cars from "./components/Admin/Cars_Managment/Edit_cars";
+import Admin_Dashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 
 import Home from "./components/Home/Home";
 
 //? for user only
-import User_Signup from "./components/User_Signup/Signup";
-import User_Login from "./components/User_Login/Login";
+import User_Signup from "./components/User/User_Signup/Signup";
+import User_Login from "./components/User/User_Login/Login";
+import User_Dashboard from "./components/User/User_Dashboard/user_dashboard";
+import User_Booking from "./components/User/User_Booking/User_Booking";
 
 //css
 import "./App.css";
@@ -24,12 +26,12 @@ function App() {
       <BrowserRouter>
         {/*! route for admin */}
 
-        <Route exact path="/admin/dashboard" component={AdminDashboard} />
+        <Route exact path="/admin/dashboard" component={Admin_Dashboard} />
         <Route exact path="/admin/signup" component={Admin_Signup} />
         <Route exact path="/admin/login" component={Admin_Login} />
-        <Route exact path="/admin/adding_car" component={AddingCar} />
-        <Route exact path="/admin/cars_details" component={CarDetails} />
-        <Route exact path="/admin/edit_car/:carId" component={EditCars} />
+        <Route exact path="/admin/adding_car" component={Adding_Car} />
+        <Route exact path="/admin/cars_details" component={Car_Details} />
+        <Route exact path="/admin/edit_car/:carId" component={Edit_Cars} />
 
         <Route exact path="/home" component={Home} />
         <Route exact path="/" component={Home} />
@@ -37,6 +39,8 @@ function App() {
         {/* Route for User */}
         <Route exact path="/signup" component={User_Signup} />
         <Route exact path="/login" component={User_Login} />
+        <Route exact path="/user/dashboard" component={User_Dashboard} />
+        <Route exact path="/user/booking" component={User_Booking} />
       </BrowserRouter>
     </div>
   );
