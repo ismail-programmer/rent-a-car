@@ -144,7 +144,7 @@ class User_Booking extends Component {
                               id="cars"
                             >
                               <option value="car">Select Your Car</option>
-                              {/* {showOptions()} */}
+                              {this.showOptions()}
                             </select>
                           </div>
                         </div>
