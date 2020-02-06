@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 let cars = JSON.parse(localStorage.getItem('carDetails')) || [];
 let admin = JSON.parse(localStorage.getItem('admin'));
 let adminIndex = localStorage.getItem('adminIndex');
 class Car {
-  constructor(num, model, owner) {
+  constructor(num, model, owner,price) {
     this.num = num;
     this.model = model;
     this.owner = owner;
+    this.price = price;
     this.id = Math.random()
       .toString(36)
       .substr(2, 7);
     this.creator = localStorage.getItem('adminIndex');
+    this.bookedStatus = false
   }
 }
 
@@ -21,8 +23,9 @@ class Adding_cars extends Component {
     let num = this.refs.num.value;
     let model = this.refs.model.value;
     let owner = this.refs.owner.value;
+    let price = `$${this.refs.price.value}`;
     if (num !== "" && model !== "" && owner !== "") {
-      let car = new Car(num, model, owner);
+      let car = new Car(num, model, owner,price);
       cars.push(car);
       localStorage.setItem('carDetails', JSON.stringify(cars))
       return true
@@ -71,7 +74,7 @@ class Adding_cars extends Component {
                         <div className="col-md-6">
                           <div className="position-relative form-group">
                             <label htmlFor="ModelName" className="">
-                              Model Name
+                            <span className="text-danger">*</span>   Model Name
                             </label>
                              <input required
                               ref="model"
@@ -92,6 +95,20 @@ class Adding_cars extends Component {
                               id="Owner"
                               placeholder="Write the Owner Name of Car here..."
                               type="text"
+                              className="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="position-relative form-group">
+                            <label htmlFor="price" className="">
+                              <span className="text-danger">*</span> Price 
+                            </label>
+                             <input required
+                              ref="price"
+                              id="Price"
+                              placeholder="Write the price of Car for renting per hour"
+                              type="number"
                               className="form-control"
                             />
                           </div>

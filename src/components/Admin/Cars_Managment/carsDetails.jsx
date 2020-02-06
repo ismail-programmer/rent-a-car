@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-const cars = JSON.parse(localStorage.getItem("carDetails"));
 class carsDetails extends Component {
   state={
     cars: []
@@ -16,6 +15,7 @@ class carsDetails extends Component {
         <td>{el.owner}</td>
         <td>{el.model}</td>
         <td>{el.num}</td>
+        <td>{el.price}</td>
         <td>
           <Link className="btn-wide btn-pill btn-shadow btn-hover-shine btn btn-primary btn-lg" to={`/admin/edit_car/${i}`}>Edit Details</Link>
         </td>
@@ -120,6 +120,7 @@ class carsDetails extends Component {
                           <th>Owner Name</th>
                           <th>Model Name</th>
                           <th>Vechile Num</th>
+                          <th>Price Per Hour</th>
                           <th>Tools</th>
                         </tr>
                       </thead>

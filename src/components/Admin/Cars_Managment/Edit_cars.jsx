@@ -16,9 +16,11 @@ class EditCar extends Component {
     let num = this.refs.num.value;
     let model = this.refs.model.value;
     let owner = this.refs.owner.value;
+    let price = this.refs.price.value;
     cars[index].num = num
     cars[index].model = model
     cars[index].owner= owner
+    cars[index].price= price
     localStorage.setItem('carDetails', JSON.stringify(cars))
   }
   deleteCar = ()=>{
@@ -69,7 +71,7 @@ class EditCar extends Component {
                         <div className="col-md-6">
                           <div className="position-relative form-group">
                             <label htmlFor="ModelName" className="">
-                              Model Name
+                            <span className="text-danger">*</span>      Model Name
                             </label>
                              <input required
                               ref="model"
@@ -93,6 +95,20 @@ class EditCar extends Component {
                               id="Owner"
                               placeholder="Write the Owner Name of Car here..."
                               type="text"
+                              className="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="position-relative form-group">
+                            <label htmlFor="price" className="">
+                              <span className="text-danger">*</span> Price 
+                            </label>
+                             <input required
+                              ref="price"
+                              id="Price"
+                              placeholder="Write the price of Car for renting per hour"
+                              type="number"
                               className="form-control"
                             />
                           </div>

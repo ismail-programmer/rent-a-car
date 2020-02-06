@@ -10,6 +10,7 @@ import Edit_Cars from "./components/Admin/Cars_Managment/Edit_cars";
 import Admin_Dashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 
 import Home from "./components/Home/Home";
+import Header from "./components/hoc/Header_Footer/Header";
 
 //? for user only
 import User_Signup from "./components/User/User_Signup/Signup";
@@ -35,6 +36,7 @@ function App() {
 
         <Route exact path="/home" component={Home} />
         <Route exact path="/" component={Home} />
+        <Route exact path="/header" component={Header} />
 
         {/* Route for User */}
         <Route exact path="/signup" component={User_Signup} />

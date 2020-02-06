@@ -1,37 +1,23 @@
 import React, { Component } from "react";
-
-import { Link } from "react-router-dom";
+import Card from './card';
 
 class Home extends Component {
+  showCards =()=>{
+    const cars =JSON.parse( localStorage.getItem("carDetails"));
+    return cars.map((el,i)=> <Card key={i} title={el.model} price={el.price} number={el.num} />)
+  }
   render() {
     return (
-      <div className=" ">
-        <div className="row ">
-          <div className="col s12">
-            <div className="App">
-              <h1>Rent a Car</h1>
-              <h4>Welcome to Our Website!</h4>
-              <div className="col s6">
-                <Link to="/signup" className="nav-link">
-                  Please Signup
-                </Link>
-              </div>
-              <div className="col s6">
-                <Link to="/login" className="nav-link">
-                  Please Login
-                </Link>
-              </div>
-              <div className="col s6">
-                <Link to="/admin/login" className="nav-link">
-                 For admin Only
-                </Link>
-              </div>
-            </div>
-          </div>
+      <div>
+        <div className="row">
+          <h1 className="col-4">Cars</h1>
+        </div>
+        <div className="row">
+          {this.showCards()}
         </div>
       </div>
     );
   }
 }
 
-export default Home;
+export default Home
