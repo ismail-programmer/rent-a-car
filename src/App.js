@@ -7,7 +7,9 @@ import Admin_Login from "./components/Admin/LoginSystem/Login";
 import Adding_Car from "./components/Admin/Cars_Managment/Adding_cars";
 import Car_Details from "./components/Admin/Cars_Managment/carsDetails";
 import Edit_Cars from "./components/Admin/Cars_Managment/Edit_cars";
+import Edit_Bookings from "./components/Admin/Booking_System/Edit_Bookings";
 import Admin_Dashboard from "./components/Admin/AdminDashboard/AdminDashboard";
+import Admin_Booking from "./components/Admin/Booking_System/Admin_Booking";
 
 import Home from "./components/Home/Home";
 import Header from "./components/hoc/Header_Footer/Header";
@@ -32,11 +34,13 @@ function App() {
         <Route exact path="/admin/login" component={Admin_Login} />
         <Route exact path="/admin/adding_car" component={Adding_Car} />
         <Route exact path="/admin/cars_details" component={Car_Details} />
-        <Route exact path="/admin/edit_car/:carId" component={Edit_Cars} />
+        <Route exact path="/admin/edit_car/:carId" component={Edit_Cars}  />
+        <Route exact path="/admin/edit_booking/:bookingId" component={Edit_Bookings}  />
+        <Route exact path="/admin/bookings_details" component={Admin_Booking}  />
 
         <Route exact path="/home" component={Home} />
         <Route exact path="/" component={Home} />
-        <Route exact path="/header" component={Header} />
+        {/* <Route exact path="/header" component={Header} /> */}
 
         {/* Route for User */}
         <Route exact path="/signup" component={User_Signup} />
