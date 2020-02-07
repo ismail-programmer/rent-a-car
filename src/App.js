@@ -12,7 +12,8 @@ import Admin_Dashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import Admin_Booking from "./components/Admin/Booking_System/Admin_Booking";
 
 import Home from "./components/Home/Home";
-import Header from "./components/hoc/Header_Footer/Header";
+import Sidebar from "./components/utils/SideBar";
+// import Header from "./components/hoc/Header_Footer/Header";
 
 //? for user only
 import User_Signup from "./components/User/User_Signup/Signup";
@@ -22,6 +23,9 @@ import User_Booking from "./components/User/User_Booking/User_Booking";
 
 //css
 import "./App.css";
+
+
+
 
 function App() {
   return (
@@ -41,6 +45,8 @@ function App() {
         <Route exact path="/home" component={Home} />
         <Route exact path="/" component={Home} />
         {/* <Route exact path="/header" component={Header} /> */}
+        {/* <Route exact path="/sidebar" component={SideBar} /> */}
+     
 
         {/* Route for User */}
         <Route exact path="/signup" component={User_Signup} />

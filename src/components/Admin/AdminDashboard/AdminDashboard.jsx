@@ -2,32 +2,22 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
+//components
+import SideBar from "../../utils/SideBar";
+
+//for sideBar
+const linksDetails = [
+  { title: "Add Vechile", link: "/admin/adding_car" },
+  { title: "All Vechile", link: "/admin/cars_details" }
+];
+
 class Home extends Component {
   render() {
     return (
       <div>
         <div className="app-container app-theme-gray">
           <div className="app-main">
-            <div className="app-sidebar-wrapper">
-              <div className="app-sidebar sidebar-shadow">
-                <div className="app-header__logo">
-                  <Link
-                    to="/"
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                    title="KeroUI Admin Template"
-                    className="logo-src"
-                  ></Link>
-                </div>
-                <div className="scrollbar-sidebar scrollbar-container">
-                  <div className="app-sidebar__inner">
-                    <Link to="/admin/adding_car">Add Vechile</Link>
-                    <br />
-                    <Link to="/admin/cars_details">All Vechile</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SideBar linksDetails={linksDetails} />
             <div className="app-sidebar-overlay d-none animated fadeIn"></div>
             <div className="app-main__outer">
               <div className="app-main__inner">

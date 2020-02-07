@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+//components
+import SideBar from "../../utils/SideBar";
+
+//for sideBar
+
+const linksDetails = [
+  { title: "Add Vechile", link: "/admin/adding_car" },
+  { title: "All Vechile", link: "/admin/cars_details" }
+];
+
 class Admin_Booking extends Component {
   state = {
     bookings: []
@@ -36,38 +46,7 @@ class Admin_Booking extends Component {
       <div>
         <div className="app-container app-theme-gray">
           <div className="app-main">
-            <div className="app-sidebar-wrapper">
-              <div className="app-sidebar sidebar-shadow">
-                <div className="app-header__logo">
-                  <Link
-                    to="/home"
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                    title="KeroUI Admin Template"
-                    className="logo-src"
-                  ></Link>
-                  <button
-                    type="button"
-                    className="hamburger hamburger--elastic mobile-toggle-nav"
-                  >
-                    <span className="hamburger-box">
-                      <span className="hamburger-inner"></span>
-                    </span>
-                  </button>
-                </div>
-                <div className="scrollbar-sidebar scrollbar-container">
-                  <div className="app-sidebar__inner">
-                    <ul className="vertical-nav-menu">
-                      <li>
-                        <Link to="/admin/dashboard">Dashboard</Link>
-                        <Link to="/admin/adding_car">Add Car</Link>
-                        <Link to="/admin/cars_details">All Cars</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SideBar linksDetails={linksDetails} />
             <div className="app-sidebar-overlay d-none animated fadeIn"></div>
             <div className="app-main__outer">
               <div className="app-main__inner">
