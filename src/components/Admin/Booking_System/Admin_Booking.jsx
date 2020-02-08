@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import SideBar from "../../utils/SideBar";
 
 //for sideBar
-
 const linksDetails = [
   { title: "Add Vechile", link: "/admin/adding_car" },
   { title: "All Vechile", link: "/admin/cars_details" }
@@ -29,14 +28,37 @@ class Admin_Booking extends Component {
         <td>{el.from}</td>
         <td>{el.to}</td>
         <td>{el.date}</td>
+
         {/* <td>{el.vechileId}</td> */}
         <td>
-          <Link
-            className="btn-wide btn-pill btn-shadow btn-hover-shine btn btn-primary btn-lg"
-            to={`/admin/edit_booking/${i}`}
-          >
-            Edit Details
-          </Link>
+          <div role="group" className="btn-group-sm btn-group">
+            {el.approved === true ? (
+              ``
+            ) : (
+              <button
+                onClick={() => {
+                  let bookings = [...this.state.bookings];
+                  bookings[i].approved = true;
+                  this.setState({
+                    bookings
+                  });
+                  localStorage.setItem(
+                    "bookings",
+                    JSON.stringify(this.state.bookings)
+                  );
+                }}
+                className="btn-shadow btn btn-primary"
+              >
+                Approve
+              </button>
+            )}
+            <Link
+              to={`/admin/edit_car/${i}`}
+              className="btn-shadow btn btn-primary"
+            >
+              Edit
+            </Link>
+          </div>
         </td>
       </tr>
     ));
@@ -94,10 +116,7 @@ class Admin_Booking extends Component {
                     </div>
                   </div>
                 </div>
-                <div
-                  className="app-inner-layout app-inner-layout-page"
-                  // style={{ display: "block" }}
-                >
+                <div className="app-inner-layout app-inner-layout-page">
                   <div className="card-body">
                     <h5 className="card-title">
                       <b>Bookings</b>

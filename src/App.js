@@ -20,6 +20,7 @@ import User_Signup from "./components/User/User_Signup/Signup";
 import User_Login from "./components/User/User_Login/Login";
 import User_Dashboard from "./components/User/User_Dashboard/user_dashboard";
 import User_Booking from "./components/User/User_Booking/User_Booking";
+import Booking_Details from "./components/User/User_Booking/Booking_details";
 
 //css
 import "./App.css";
@@ -53,6 +54,7 @@ function App() {
         <Route exact path="/login" component={User_Login} />
         <Route exact path="/user/dashboard" component={User_Dashboard} />
         <Route exact path="/user/booking" component={User_Booking} />
+        <Route exact path="/user/bookings_details" component={Booking_Details} />
       </BrowserRouter>
     </div>
   );

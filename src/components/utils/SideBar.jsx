@@ -20,9 +20,9 @@ class SideBar extends Component {
           <div className="scrollbar-sidebar scrollbar-container">
             <div className="app-sidebar__inner">
               <ul className="vertical-nav-menu">
-                {this.props.linksDetails.map(el => {
+                {this.props.linksDetails.map((el, i) => {
                   return (
-                    <li>
+                    <li key={i}>
                       <Link to={el.link}>{el.title}</Link>
                     </li>
                   );

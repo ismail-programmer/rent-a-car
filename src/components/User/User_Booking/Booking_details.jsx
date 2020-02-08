@@ -5,9 +5,34 @@ import { Link } from "react-router-dom";
 import SideBar from "../../utils/SideBar";
 
 //for sideBar
-const linksDetails = [{ title: "Booking", link: "/user/booking" }];
+const linksDetails = [
+  { title: "Dashboard", link: "/user/dashboard" },
+  { title: "Booking Details", link: "/user/bookings_details" }
+];
 
-class user_dashboard extends Component {
+class Admin_Booking extends Component {
+  state = {
+    bookings: []
+  };
+
+  componentDidMount() {
+    this.setState({ bookings: JSON.parse(localStorage.getItem("bookings")) });
+  }
+
+  showTable = () => {
+    return this.state.bookings.map((el, i) => (
+      <tr key={i}>
+        <th>{i + 1}</th>
+        <td>{el.id}</td>
+        <td>{el.from}</td>
+        <td>{el.to}</td>
+        <td>{el.date}</td>
+        {console.log(el.approved)}
+        <td>{el.vechileId}</td>
+        <td>{el.approved ? "Approved" : "Pending"}</td>
+      </tr>
+    ));
+  };
   render() {
     return (
       <div>
@@ -54,19 +79,32 @@ class user_dashboard extends Component {
                     style={{ margin: "0 auto", textAlign: "center" }}
                   >
                     <div className="page-title-heading">
-                      <h2>Heading</h2>
-                      <div className="page-title-subheading">Heading div</div>
+                      <h2>Booking Details</h2>
+                      <div className="page-title-subheading">
+                        Here You find all the Bookings from the users.
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  className="app-inner-layout app-inner-layout-page"
-                  // style={{ display: "block" }}
-                >
+                <div className="app-inner-layout app-inner-layout-page">
                   <div className="card-body">
                     <h5 className="card-title">
-                      <b>Heading 2</b>
+                      <b>Bookings</b>
                     </h5>
+                    <table className="mb-0 table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Booking id</th>
+                          <th>From Route</th>
+                          <th>To Route</th>
+                          <th>Date of Booking</th>
+                          <th>vechile id</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>{this.showTable()}</tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -80,4 +118,4 @@ class user_dashboard extends Component {
   }
 }
 
-export default user_dashboard;
+export default Admin_Booking;

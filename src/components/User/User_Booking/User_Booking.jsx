@@ -19,7 +19,7 @@ class Booking {
     this.to = to;
     this.date = date;
     this.vechileId = vechileId;
-    // this.status = 'Free'
+    this.approved = false
   }
 }
 
