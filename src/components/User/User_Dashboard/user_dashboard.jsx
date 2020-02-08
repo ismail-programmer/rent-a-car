@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SideBar from "../../utils/SideBar";
 
 //for sideBar
-const linksDetails = [{ title: "Booking", link: "/user/booking" }];
+const linksDetails = [{ title: "Bookings Details", link: "/user/booking" }];
 
 class user_dashboard extends Component {
   render() {

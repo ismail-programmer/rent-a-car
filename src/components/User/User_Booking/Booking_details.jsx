@@ -7,7 +7,7 @@ import SideBar from "../../utils/SideBar";
 //for sideBar
 const linksDetails = [
   { title: "Dashboard", link: "/user/dashboard" },
-  { title: "Booking Details", link: "/user/bookings_details" }
+  
 ];
 
 class Admin_Booking extends Component {

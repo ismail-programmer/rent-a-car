@@ -13,7 +13,7 @@ import Admin_Booking from "./components/Admin/Booking_System/Admin_Booking";
 
 import Home from "./components/Home/Home";
 import Sidebar from "./components/utils/SideBar";
-import Header from "./components/hoc/Header/Header";
+import Header from "./components/Layout/Header/Header";
 
 //? for user only
 import User_Signup from "./components/User/User_Signup/Signup";
@@ -25,37 +25,45 @@ import Booking_Details from "./components/User/User_Booking/Booking_details";
 //css
 import "./App.css";
 
-
-
-
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header />
-        {/*! route for admin */}
+        <Header />
+        {
+          //? Route for User */
+         }
 
         <Route exact path="/admin/dashboard" component={Admin_Dashboard} />
         <Route exact path="/admin/signup" component={Admin_Signup} />
         <Route exact path="/admin/login" component={Admin_Login} />
         <Route exact path="/admin/adding_car" component={Adding_Car} />
         <Route exact path="/admin/cars_details" component={Car_Details} />
-        <Route exact path="/admin/edit_car/:carId" component={Edit_Cars}  />
-        <Route exact path="/admin/edit_booking/:bookingId" component={Edit_Bookings}  />
-        <Route exact path="/admin/bookings_details" component={Admin_Booking}  />
+        <Route exact path="/admin/edit_car/:carId" component={Edit_Cars} />
+        <Route
+          exact
+          path="/admin/edit_booking/:bookingId"
+          component={Edit_Bookings}
+        />
+        <Route exact path="/admin/bookings_details" component={Admin_Booking} />
 
         <Route exact path="/home" component={Home} />
         <Route exact path="/" component={Home} />
         {/* <Route exact path="/header" component={Header} /> */}
         {/* <Route exact path="/sidebar" component={SideBar} /> */}
-     
 
-        {/* Route for User */}
+        {
+          //? Route for User */
+         }
         <Route exact path="/signup" component={User_Signup} />
         <Route exact path="/login" component={User_Login} />
         <Route exact path="/user/dashboard" component={User_Dashboard} />
         <Route exact path="/user/booking" component={User_Booking} />
-        <Route exact path="/user/bookings_details" component={Booking_Details} />
+        <Route
+          exact
+          path="/user/bookings_details"
+          component={Booking_Details}
+        />
       </BrowserRouter>
     </div>
   );

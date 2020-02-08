@@ -8,9 +8,10 @@ import SideBar from "../../utils/SideBar";
 //for sideBar
 const linksDetails = [
   { title: "Dashboard", link: "/admin/dashboard" },
-  { title: "Add Car", link: "/admin/adding_car" }
+  { title: "Booking Details", link: "/admin/bookings_details" },
+  { title: "Add Vechile", link: "/admin/adding_car" },
+  { title: "All Vechiles", link: "/admin/cars_details" }
 ];
-
 
 
 

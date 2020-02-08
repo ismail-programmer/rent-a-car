@@ -7,8 +7,10 @@ import SideBar from "../../utils/SideBar";
 
 //for sideBar
 const linksDetails = [
+  { title: "Cars Details", link: "/admin/cars_details" },
+  { title: "Booking Details", link: "/admin/bookings_details" },
   { title: "Add Vechile", link: "/admin/adding_car" },
-  { title: "All Vechile", link: "/admin/cars_details" }
+  { title: "All Vechiles", link: "/admin/cars_details" }
 ];
 
 class Home extends Component {
