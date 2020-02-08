@@ -13,7 +13,7 @@ import Admin_Booking from "./components/Admin/Booking_System/Admin_Booking";
 
 import Home from "./components/Home/Home";
 import Sidebar from "./components/utils/SideBar";
-// import Header from "./components/hoc/Header_Footer/Header";
+import Header from "./components/hoc/Header/Header";
 
 //? for user only
 import User_Signup from "./components/User/User_Signup/Signup";
@@ -32,6 +32,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Header />
         {/*! route for admin */}
 
         <Route exact path="/admin/dashboard" component={Admin_Dashboard} />
