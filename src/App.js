@@ -12,7 +12,7 @@ import Admin_Dashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import Admin_Booking from "./components/Admin/Booking_System/Admin_Booking";
 
 import Home from "./components/Home/Home";
-import Sidebar from "./components/utils/SideBar";
+// import Sidebar from "./components/utils/SideBar";
 import Header from "./components/Layout/Header/Header";
 
 //? for user only
@@ -20,7 +20,7 @@ import User_Signup from "./components/User/User_Signup/Signup";
 import User_Login from "./components/User/User_Login/Login";
 import User_Dashboard from "./components/User/User_Dashboard/user_dashboard";
 import User_Booking from "./components/User/User_Booking/User_Booking";
-import Booking_Details from "./components/User/User_Booking/Booking_details";
+import Booking_DetailsWrapper from "./components/User/User_Booking/Wrapper";
 
 //css
 import "./App.css";
@@ -32,7 +32,7 @@ function App() {
         <Header />
         {
           //? Route for User */
-         }
+        }
 
         <Route exact path="/admin/dashboard" component={Admin_Dashboard} />
         <Route exact path="/admin/signup" component={Admin_Signup} />
@@ -54,7 +54,7 @@ function App() {
 
         {
           //? Route for User */
-         }
+        }
         <Route exact path="/signup" component={User_Signup} />
         <Route exact path="/login" component={User_Login} />
         <Route exact path="/user/dashboard" component={User_Dashboard} />
@@ -62,7 +62,7 @@ function App() {
         <Route
           exact
           path="/user/bookings_details"
-          component={Booking_Details}
+          component={Booking_DetailsWrapper}
         />
       </BrowserRouter>
     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-const users = JSON.parse(localStorage.getItem("users")) || [];
+const users = JSON.parse(localStorage.getItem("admins")) || [];
 
 class User {
   constructor(name, email, password) {

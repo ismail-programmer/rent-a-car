@@ -15,10 +15,11 @@ class EditCar extends Component {
   };
 
   showOptions = () => {
-    const fileredCars = carDetails.filter((el, i) => {
+    const fileredCars = carDetails.filter((el) => {
       if (el.bookedStatus === false) {
         return true;
       }
+      return false;
     });
     return fileredCars.map((el, i) => {
       return (
