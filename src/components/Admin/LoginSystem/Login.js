@@ -1,14 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Success from "../../utils/Success";
 
 class Login extends Component {
+  popup = (i,path)=>{
+    document.querySelector(`#success-${i}`).classList.add(`slide-in`)
+    setTimeout(() =>{
+      document.querySelector(`#success-${i}`).classList.remove("slide-in")
+      setTimeout(()=>this.props.history.push(path), 800)
+    }, 2500);
+  }
   isCorrect = e => {
+    e.preventDefault()
     const email = this.refs.email.value;
     const password = this.refs.password.value;
     const users = JSON.parse(localStorage.getItem("admin")) || [];
     const index = users.findIndex(el => email === el.email);
     if (index !== -1) {
       if (users[index].password === password) {
+        this.popup(1,"/admin/dashboard")
         this.refs.chkEmail.style.display = `none`;
         localStorage.setItem("adminIndex", JSON.stringify(index));
         return true;
@@ -20,12 +30,10 @@ class Login extends Component {
       return false;
     }
   };
-  componentDidMount() {
-    document.forms[0].onsubmit = this.isCorrect;
-  }
   render() {
     return (
       <div className="app-container app-theme-white body-tabs-shadow">
+        <Success color="green" name="User" condition="Logged in" i={1} />
         <div className="app-container">
           <div className="h-100">
             <div className="h-100 no-gutters row">
@@ -72,7 +80,7 @@ class Login extends Component {
                   </h6>
                   <div className="divider row"></div>
                   <div>
-                    <form className=""  action="/admin/dashboard">
+                    <form className="" onSubmit={this.isCorrect}  action="/admin/dashboard">
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">

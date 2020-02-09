@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Success from "../../utils/Success";
 // import { Link } from "react-router-dom";
 
 let cars = JSON.parse(localStorage.getItem('carDetails')) || [];
@@ -19,25 +20,30 @@ class Car {
 }
 
 class Adding_cars extends Component {
+  popup = (i,path)=>{
+    document.querySelector(`#success-${i}`).classList.add(`slide-in`)
+    setTimeout(() =>{
+      document.querySelector(`#success-${i}`).classList.remove("slide-in")
+      setTimeout(()=>this.props.history.push(path), 800)
+    }, 2500);
+  }
   handleSubmit = (e) => {
+    e.preventDefault()
     let num = this.refs.num.value;
     let model = this.refs.model.value;
     let owner = this.refs.owner.value;
     let price = `$${this.refs.price.value}`;
     if (num !== "" && model !== "" && owner !== "") {
+      this.popup(1, "/admin/cars_details")
       let car = new Car(num, model, owner,price);
       cars.push(car);
-      localStorage.setItem('carDetails', JSON.stringify(cars))
-      return true
+      localStorage.setItem('carDetails', JSON.stringify(cars));
     }
-    return false
   };
-  componentDidMount(){
-    document.forms[0].onsubmit = this.handleSubmit
-  }
   render() {
     return (
       <div className="app-container app-theme-white body-tabs-shadow">
+        <Success color="green" name="Car" condition="Added" i={1} />
         <div className="app-container">
           <div className="h-100">
             <div className="h-100 no-gutters row">
@@ -54,7 +60,7 @@ class Adding_cars extends Component {
                   </h4>
 
                   <div>
-                    <form action="/admin/cars_details">
+                    <form action="/admin/cars_details" onSubmit={this.handleSubmit}>
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">

@@ -13,7 +13,7 @@ import Admin_Booking from "./components/Admin/Booking_System/Admin_Booking";
 
 import Home from "./components/Home/Home";
 // import Sidebar from "./components/utils/SideBar";
-import Header from "./components/Layout/Header/Header";
+import Header from "./components/layout/Header/Header";
 
 //? for user only
 import User_Signup from "./components/User/User_Signup/Signup";
@@ -33,18 +33,13 @@ function App() {
         {
           //? Route for User */
         }
-
         <Route exact path="/admin/dashboard" component={Admin_Dashboard} />
         <Route exact path="/admin/signup" component={Admin_Signup} />
         <Route exact path="/admin/login" component={Admin_Login} />
         <Route exact path="/admin/adding_car" component={Adding_Car} />
         <Route exact path="/admin/cars_details" component={Car_Details} />
         <Route exact path="/admin/edit_car/:carId" component={Edit_Cars} />
-        <Route
-          exact
-          path="/admin/edit_booking/:bookingId"
-          component={Edit_Bookings}
-        />
+        <Route exact path="/admin/edit_booking/:bookingId"component={Edit_Bookings}/>
         <Route exact path="/admin/bookings_details" component={Admin_Booking} />
 
         <Route exact path="/home" component={Home} />

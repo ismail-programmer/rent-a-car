@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import Success from '../../utils/Success'
 class Login extends Component {
   isCorrect = e => {
+    e.preventDefault();
     const email = this.refs.email.value;
     const password = this.refs.password.value;
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const index = users.findIndex(el => email === el.email);
-    if (index !== -1) {
-      if (users[index].password === password) {
+    if (users[index].password === password) {
+      if (index !== -1) {
         this.refs.chkEmail.style.display = `none`;
+        document.querySelector(".success-outer").classList.add("slide-in")
         localStorage.setItem("userIndex", JSON.stringify(index));
+        setTimeout(() =>{
+          document.querySelector(".success-outer").classList.remove("slide-in")
+          setTimeout(()=>this.props.history.push("/user/dashboard"), 800)
+        }, 2500);
         return true;
       }
       this.refs.chkPass.innerHTML = "password is incorrect";
@@ -20,12 +26,10 @@ class Login extends Component {
       return false;
     }
   };
-  componentDidMount() {
-    document.forms[0].onsubmit = this.isCorrect;
-  }
   render() {
     return (
       <div className="app-container app-theme-white body-tabs-shadow">
+        <Success color="green" name="User" condition="Logged IN" elClass="" />
         <div className="app-container">
           <div className="h-100">
             <div className="h-100 no-gutters row">
@@ -47,8 +51,9 @@ class Login extends Component {
                         <div className="slider-content">
                           <h3>Rent A Car</h3>
                           <p>
-                          You can avail our service 24/7 for rent a car.It is a good service at all.
-                           If you are willing you can contact Us.
+                            You can avail our service 24/7 for rent a car.It is
+                            a good service at all. If you are willing you can
+                            contact Us.
                           </p>
                         </div>
                       </div>
@@ -115,7 +120,7 @@ class Login extends Component {
                   </h6>
                   <div className="divider row"></div>
                   <div>
-                    <form className=""  action="/user/dashboard">
+                    <form onSubmit={this.isCorrect} className="" action="/user/dashboard">
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">

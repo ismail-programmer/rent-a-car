@@ -26,7 +26,7 @@ class Home extends Component {
           <div className="app-header">
             <div
               className="app-header-right"
-              // style={{ margin: "0 auto", textAlign: "center" }}
+              //  style={{ margin: "0 auto", textAlign: "center" }}
             >
               <div className="page-title-heading">
                 <h2> Welcome Admin, {activeUser.name}</h2>

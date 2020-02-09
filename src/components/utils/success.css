@@ -1,0 +1,19 @@
+.success-outer{
+  width: 50%;
+  height: 50px;
+  position: fixed;top: -1%;left: 50%;transform: translate(-50%,-150%);
+  padding: 1rem;
+  box-sizing: content-box;
+  border-radius: 10px;
+  transition: all 0.8s;
+  z-index: 1000;
+}
+.success-inner{
+  text-align: center;
+  margin: 10px auto;
+  color: #fff;
+  font-size: 1.1rem;
+}
+.slide-in{
+  transform: translate(-50%,0);
+}

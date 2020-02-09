@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Success from "../../utils/Success";
 
 let bookings = JSON.parse(localStorage.getItem("bookings"));
 let admin = JSON.parse(localStorage.getItem("admin"));
@@ -34,30 +35,35 @@ class EditCar extends Component {
     super(props);
     index = props.match.params.bookingId;
   }
-
+  popup = (i,path)=>{
+    document.querySelector(`#success-${i}`).classList.add(`slide-in`)
+    setTimeout(() =>{
+      document.querySelector(`#success-${i}`).classList.remove("slide-in")
+      setTimeout(()=>this.props.history.push(path), 500)
+    }, 2500);
+  }
   editDone = e => {
-    //   e.preventDefault()
+    e.preventDefault();
     let from = this.refs.from.value;
     let to = this.refs.to.value;
     let date = this.refs.date.value;
     bookings[index].from = from;
     bookings[index].to = to;
     bookings[index].date = date;
-    // bookings[index].vechileId = vechileId;
-
-    // carDetails[this.refs.select.selectedIndex].bookedStatus = false;
-    // carDetails[this.refs.select.selectedIndex].bookedStatus = true;
-
-    // localStorage.setItem("carDetails", JSON.stringify(carDetails));
+    this.popup(1,"/admin/bookings_details")
     localStorage.setItem("bookings", JSON.stringify(bookings));
   };
-  deleteCar = () => {
+  deleteCar = (e) => {
+    e.preventDefault();
     bookings.splice(index, 1);
+    this.popup(2,"/admin/bookings_details")
     localStorage.setItem("bookings", JSON.stringify(bookings));
   };
   render() {
     return (
       <div className="app-container app-theme-white body-tabs-shadow">
+        <Success color="green" name="Booking" i={1} condition="Edited" />
+        <Success color="red" name="Booking" i={2} condition="Deleted" />
         <div className="app-container">
           <div className="h-100">
             <div className="h-100 no-gutters row">

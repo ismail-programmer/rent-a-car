@@ -5,7 +5,7 @@ const Card = props => {
   return (
     <div className="col-4">
       <div className="myCard transition">
-        <h2 className="transition">{props.title}</h2>
+        <h2 className="transition"> {props.title}</h2>
         <p>Car Number: {props.number}<br/>
         Price Per Hour: {props.price}</p>
         <div className="cta-container transition">

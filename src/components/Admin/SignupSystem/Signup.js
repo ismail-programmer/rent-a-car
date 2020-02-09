@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Success from "../../utils/Success";
 
 const users = JSON.parse(localStorage.getItem("admins")) || [];
 
@@ -50,8 +51,15 @@ class Signup extends Component {
     }
     return true;
   };
-
-  submitted = () => {
+  popup = (i,path)=>{
+    document.querySelector(`#success-${i}`).classList.add(`slide-in`)
+    setTimeout(() =>{
+      document.querySelector(`#success-${i}`).classList.remove("slide-in")
+      setTimeout(()=>this.props.history.push(path), 800)
+    }, 2500);
+  }
+  submitted = (e) => {
+    e.preventDefault()
     let name = this.refs.name.value;
     let email = this.refs.email.value;
     let password = this.refs.password.value;
@@ -63,6 +71,7 @@ class Signup extends Component {
       this.chkConfirmPass(password, confirmPassword) &&
       this.chkExsis(email)
     ) {
+      this.popup(1,"/admin/login")
       let user = new User(name, email, password);
       users.push(user);
       localStorage.setItem("admin", JSON.stringify(users));
@@ -70,12 +79,10 @@ class Signup extends Component {
     }
     return false;
   };
-  componentDidMount() {
-    document.forms[0].onsubmit = this.submitted;
-  }
   render() {
     return (
       <div className="app-container app-theme-white body-tabs-shadow">
+        <Success color="green" name="User" condition="Added" i={1} />
         <div className="app-container">
           <div className="h-100">
             <div className="h-100 no-gutters row">
@@ -92,7 +99,7 @@ class Signup extends Component {
                   </h4>
 
                   <div>
-                    <form action="/admin/login" >
+                    <form action="/admin/login" onSubmit={this.submitted} >
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">

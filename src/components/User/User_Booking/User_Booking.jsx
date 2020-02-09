@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Success from "../../utils/Success";
 // import { Link } from "react-router-dom";
 
 const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
@@ -24,6 +25,13 @@ class Booking {
 }
 
 class User_Booking extends Component {
+  popup = (i, path) => {
+    document.querySelector(`#success-${i}`).classList.add(`slide-in`);
+    setTimeout(() => {
+      document.querySelector(`#success-${i}`).classList.remove("slide-in");
+      setTimeout(() => this.props.history.push(path), 800);
+    }, 2500);
+  };
   showOptions = () => {
     const fileredCars = carDetails.filter((el, i) => {
       if (el.bookedStatus === false) {
@@ -41,6 +49,7 @@ class User_Booking extends Component {
   render() {
     return (
       <div className="app-container app-theme-white body-tabs-shadow">
+        <Success color="gold" name="Car" i={1} condition="Booked" />
         <div className="app-container">
           <div className="h-100">
             <div className="h-100 no-gutters row">
@@ -59,7 +68,8 @@ class User_Booking extends Component {
                   <div>
                     <form
                       action="/user/dashboard"
-                      onSubmit={() => {
+                      onSubmit={(e) => {
+                        e.preventDefault()
                         if (this.refs.select.selectedIndex !== 0) {
                           let bookedCarDetails = new Booking(
                             this.refs.from.value,
@@ -67,6 +77,7 @@ class User_Booking extends Component {
                             this.refs.date.value,
                             carDetails[this.refs.select.selectedIndex - 1].id
                           );
+                          this.popup(1,"/user/dashboard")
                           carDetails[
                             this.refs.select.selectedIndex - 1
                           ].bookedStatus = true;

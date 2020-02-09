@@ -81,7 +81,7 @@ class carsDetails extends Component {
                   <div
                     className="app-header-right"
                     style={{ margin: "0 auto", textAlign: "center" }}
-                  >
+                  > 
                     <div className="page-title-heading">
                       <h2>Cars Details</h2>
                       <div className="page-title-subheading">
