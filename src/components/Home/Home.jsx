@@ -3,7 +3,7 @@ import Card from "./card";
 
 class Home extends Component {
   showCards = () => {
-    const cars = JSON.parse(localStorage.getItem("carDetails"));
+    const cars = JSON.parse(localStorage.getItem("carDetails")) || [];
     return cars.map((el, i) => ( 
       <Card key={i} title={el.model} price={el.price} number={el.num} />
     ));

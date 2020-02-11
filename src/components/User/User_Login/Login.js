@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Success from '../../utils/Success'
+import Success from "../../utils/Success";
 class Login extends Component {
   isCorrect = e => {
     e.preventDefault();
@@ -8,22 +8,31 @@ class Login extends Component {
     const password = this.refs.password.value;
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const index = users.findIndex(el => email === el.email);
-    if (users[index].password === password) {
-      if (index !== -1) {
-        this.refs.chkEmail.style.display = `none`;
-        document.querySelector(".success-outer").classList.add("slide-in")
-        localStorage.setItem("userIndex", JSON.stringify(index));
-        setTimeout(() =>{
-          document.querySelector(".success-outer").classList.remove("slide-in")
-          setTimeout(()=>this.props.history.push("/user/dashboard"), 800)
-        }, 2500);
-        return true;
+    if (users[index]) {
+      if (users[index].password === password) {
+        if (index !== -1) {
+          this.refs.chkEmail.style.display = `none`;
+          document.querySelector(".success-outer").classList.add("slide-in");
+          localStorage.setItem("userIndex", JSON.stringify(index));
+          setTimeout(() => {
+            document
+              .querySelector(".success-outer")
+              .classList.remove("slide-in");
+            setTimeout(() => {
+              this.props.history.push("/user/dashboard");
+            }, 800);
+          }, 2500);
+          return true;
+        }
+        this.refs.chkPass.innerHTML = "password is incorrect";
+        return false;
+      } else {
+        this.refs.chkEmail.innerHTML = "user is not registered";
+        return false;
       }
-      this.refs.chkPass.innerHTML = "password is incorrect";
-      return false;
-    } else {
+    } else{
       this.refs.chkEmail.innerHTML = "user is not registered";
-      return false;
+        return false;
     }
   };
   render() {
@@ -58,50 +67,6 @@ class Login extends Component {
                         </div>
                       </div>
                     </div>
-                    {/* 
-                    <div>
-                      <div
-                        className="h-100 d-flex justify-content-center align-items-center bg-premium-dark"
-                        tabIndex="-1"
-                      >
-                        <div
-                          className="slide-img-bg"
-                          style={{
-                            backgroundImage:
-                              "url('../../resources/assets/images/originals/citynights.jpg')"
-                          }}
-                        ></div>
-                        <div className="slider-content">
-                          <h3>Scalable, Modular, Consistent</h3>
-                          <p>
-                            Easily exclude the components you don't require.
-                            Lightweight, consistent Bootstrap based styles
-                            across all elements and components
-                          </p>
-                        </div>
-                      </div>
-                    </div> 
-                    <div>
-                      <div
-                        className="h-100 d-flex justify-content-center align-items-center bg-sunny-morning"
-                        tabIndex="-1"
-                      >
-                        <div
-                          className="slide-img-bg"
-                          style={{
-                            backgroundImage:
-                              "url('../../resources/assets/images/originals/citydark.jpg')"
-                          }}
-                        ></div>
-                        <div className="slider-content">
-                          <h3>Complex, but lightweight</h3>
-                          <p>
-                            We've included a lot of components that cover almost
-                            all use cases for any type of application.
-                          </p>
-                        </div>
-                      </div>
-                    </div>*/}
                   </div>
                 </div>
               </div>
@@ -113,14 +78,18 @@ class Login extends Component {
                     <span>Please sign in to your account.</span>
                   </h4>
                   <h6 className="mt-3">
-                    No account?{" "}
-                    <Link to="/admin/signup" className="text-primary">
+                    No account?
+                    <Link to="/signup" className="text-primary">
                       Sign up now
                     </Link>
                   </h6>
                   <div className="divider row"></div>
                   <div>
-                    <form onSubmit={this.isCorrect} className="" action="/user/dashboard">
+                    <form
+                      onSubmit={this.isCorrect}
+                      className=""
+                      action="/user/dashboard"
+                    >
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">
@@ -128,7 +97,6 @@ class Login extends Component {
                               Email
                             </label>
                             <input
-                              // name="email"
                               id="exampleEmail"
                               placeholder="Email here..."
                               type="email"
@@ -144,7 +112,6 @@ class Login extends Component {
                               Password
                             </label>
                             <input
-                              // name="password"
                               id="examplePassword"
                               placeholder="Password here..."
                               type="password"

@@ -20,7 +20,7 @@ class carsDetails extends Component {
     cars: []
   }
   componentDidMount(){
-    this.setState({cars: JSON.parse(localStorage.getItem("carDetails"))})
+    this.setState({cars: JSON.parse(localStorage.getItem("carDetails")) || []})
   }
   showTable = () =>{
     return this.state.cars.map((el, i) => (

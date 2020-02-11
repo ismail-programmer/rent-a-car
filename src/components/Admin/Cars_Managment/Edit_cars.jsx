@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Success from "../../utils/Success";
 
-let cars = JSON.parse(localStorage.getItem("carDetails"));
-let admin = JSON.parse(localStorage.getItem("admin"));
+let cars = JSON.parse(localStorage.getItem("carDetails")) || [];
+let admin = JSON.parse(localStorage.getItem("admin")) || [];
 let adminIndex = localStorage.getItem("adminIndex");
 let index;
 class EditCar extends Component {

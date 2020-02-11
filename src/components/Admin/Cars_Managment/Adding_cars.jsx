@@ -3,7 +3,7 @@ import Success from "../../utils/Success";
 // import { Link } from "react-router-dom";
 
 let cars = JSON.parse(localStorage.getItem('carDetails')) || [];
-let admin = JSON.parse(localStorage.getItem('admin'));
+let admin = JSON.parse(localStorage.getItem('admin')) || [];
 let adminIndex = localStorage.getItem('adminIndex');
 class Car {
   constructor(num, model, owner,price) {

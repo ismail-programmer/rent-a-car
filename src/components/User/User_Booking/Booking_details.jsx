@@ -7,7 +7,7 @@ class Admin_Booking extends Component {
   };
 
   componentDidMount() {
-    this.setState({ bookings: JSON.parse(localStorage.getItem("bookings")) });
+    this.setState({ bookings: JSON.parse(localStorage.getItem("bookings")) || [] });
   }
 
   showTable = () => {
@@ -18,15 +18,15 @@ class Admin_Booking extends Component {
         <td>{el.from}</td>
         <td>{el.to}</td>
         <td>{el.date}</td>
-        {console.log(el.approved)}
         <td>{el.vechileId}</td>
         <td>{el.approved ? "Approved" : "Pending"}</td>
+        <td>{el.completed ? "Complete" : "Incomplete"}</td>
       </tr>
     ));
   };
   render() {
     return (
-      <div className="app-main__outer">
+      <div className="app-main__outer" style={this.props.style ? this.props.style : {}}>
         <div className="app-main__inner">
           <div className="header-mobile-wrapper">
             <div className="app-header__logo">
@@ -86,7 +86,8 @@ class Admin_Booking extends Component {
                     <th>To Route</th>
                     <th>Date of Booking</th>
                     <th>vechile id</th>
-                    <th>Status</th>
+                    <th>Approval Status</th>
+                    <th>Completion Status</th>
                   </tr>
                 </thead>
                 <tbody>{this.showTable()}</tbody>

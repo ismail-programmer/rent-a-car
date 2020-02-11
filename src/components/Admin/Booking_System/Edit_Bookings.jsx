@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Success from "../../utils/Success";
 
-let bookings = JSON.parse(localStorage.getItem("bookings"));
-let admin = JSON.parse(localStorage.getItem("admin"));
+let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+let admin = JSON.parse(localStorage.getItem("admin")) || [];
 let adminIndex = localStorage.getItem("adminIndex");
-const carDetails = JSON.parse(localStorage.getItem("carDetails"));
+const carDetails = JSON.parse(localStorage.getItem("carDetails")) || [];
 let index;
 
 class EditCar extends Component {
@@ -39,7 +39,7 @@ class EditCar extends Component {
     document.querySelector(`#success-${i}`).classList.add(`slide-in`)
     setTimeout(() =>{
       document.querySelector(`#success-${i}`).classList.remove("slide-in")
-      setTimeout(()=>this.props.history.push(path), 500)
+      setTimeout(()=>this.props.history.push(path), 800)
     }, 2500);
   }
   editDone = e => {

@@ -9,7 +9,8 @@ const linksDetails = [
   { title: "Cars Details", link: "/admin/cars_details" },
   { title: "Dashboard", link: "/admin/dashboard" },
   { title: "Add Vechile", link: "/admin/adding_car" },
-  { title: "All Vechiles", link: "/admin/cars_details" }
+  { title: "All Vechiles", link: "/admin/cars_details" },
+  { title: "All Bookings", link: "/admin/bookings_details" }
 ];
 
 class Admin_Booking extends Component {
@@ -18,7 +19,9 @@ class Admin_Booking extends Component {
   };
 
   componentDidMount() {
-    this.setState({ bookings: JSON.parse(localStorage.getItem("bookings")) });
+    this.setState(
+      { bookings: JSON.parse(localStorage.getItem("bookings")) } || []
+    );
   }
 
   showTable = () => {
@@ -52,6 +55,26 @@ class Admin_Booking extends Component {
                 className="btn-shadow btn btn-primary"
               >
                 Approve
+              </button>
+            )}
+            {el.completed === true ? (
+              ``
+            ) : (
+              <button
+                onClick={() => {
+                  let bookings = [...this.state.bookings];
+                  bookings[i].completed = true;
+                  this.setState({
+                    bookings
+                  });
+                  localStorage.setItem(
+                    "bookings",
+                    JSON.stringify(this.state.bookings)
+                  );
+                }}
+                className="btn-shadow btn btn-primary"
+              >
+                Completed
               </button>
             )}
             <Link

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Success from "../../utils/Success";
 
 const users = JSON.parse(localStorage.getItem("users")) || [];
-
 class User {
   constructor(name, email, password) {
-    this.id = Math.random().toString(36).substr (2, 9)
+    this.id = Math.random()
+      .toString(36)
+      .substr(2, 9);
     this.name = name;
     this.email = email;
     this.password = password;
@@ -21,7 +23,13 @@ class Signup extends Component {
       return true;
     }
   };
-
+  popup = (i, path) => {
+    document.querySelector(`#success-${i}`).classList.add(`slide-in`);
+    setTimeout(() => {
+      document.querySelector(`#success-${i}`).classList.remove("slide-in");
+      setTimeout(() => this.props.history.push(path), 800);
+    }, 2500);
+  };
   chkConfirmPass = (password, confirmPassword) => {
     if (password === confirmPassword) {
       return true;
@@ -51,18 +59,19 @@ class Signup extends Component {
     return true;
   };
 
-  submitted = () => {
+  submitted = (e) => {
+    e.preventDefault()
     let name = this.refs.name.value;
     let email = this.refs.email.value;
     let password = this.refs.password.value;
     let confirmPassword = this.refs.confirmPassword.value;
-    // 12345678
     if (
       this.chkEmail(email) &&
       this.chkPass(password) &&
       this.chkConfirmPass(password, confirmPassword) &&
       this.chkExsis(email)
     ) {
+      this.popup(1, "/login");
       let user = new User(name, email, password);
       users.push(user);
       localStorage.setItem("users", JSON.stringify(users));
@@ -70,18 +79,16 @@ class Signup extends Component {
     }
     return false;
   };
-  componentDidMount() {
-    document.forms[0].onsubmit = this.submitted;
-  }
   render() {
     return (
       <div className="app-container app-theme-white body-tabs-shadow">
+        <Success color="green" name="User" i={1} condition="Signed up" />
         <div className="app-container">
           <div className="h-100">
             <div className="h-100 no-gutters row">
               <div className="h-100 d-md-flex d-sm-block bg-white justify-content-center align-items-center col-md-12 col-lg-7">
                 <div className="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
-                  <div className="app-logo" ></div>
+                  <div className="app-logo"></div>
                   <h4>
                     <div>Welcome,</div>
                     <span>
@@ -92,7 +99,7 @@ class Signup extends Component {
                   </h4>
 
                   <div>
-                    <form action="/login" >
+                    <form onSubmit={this.submitted} action="/login">
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">
@@ -100,7 +107,6 @@ class Signup extends Component {
                               <span className="text-danger">*</span> Email
                             </label>
                             <input
-                              // name="email"
                               id="exampleEmail"
                               placeholder="Email here..."
                               type="email"
@@ -117,7 +123,6 @@ class Signup extends Component {
                             </label>
                             <input
                               ref="name"
-                              // name="text"
                               id="exampleName"
                               placeholder="Name here..."
                               type="text"
@@ -133,7 +138,6 @@ class Signup extends Component {
                             </label>
                             <input
                               ref="password"
-                              // name="password"
                               id="examplePassword"
                               placeholder="Password here..."
                               type="password"
@@ -165,7 +169,7 @@ class Signup extends Component {
                       <div className="mt-4 d-flex align-items-center">
                         <h5 className="mb-0">
                           Already have an account?{" "}
-                          <Link to="/admin/login" className="text-primary">
+                          <Link to="/login" className="text-primary">
                             Sign in
                           </Link>
                         </h5>
@@ -197,8 +201,9 @@ class Signup extends Component {
                         <div className="slider-content">
                           <h3>Rent a Car</h3>
                           <p>
-                           You can avail our service 24/7 for rent a car.It is a good service at all.
-                           If you are willing you can contact Us.
+                            You can avail our service 24/7 for rent a car.It is
+                            a good service at all. If you are willing you can
+                            contact Us.
                           </p>
                         </div>
                       </div>

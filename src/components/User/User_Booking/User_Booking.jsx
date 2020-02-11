@@ -4,11 +4,11 @@ import Success from "../../utils/Success";
 
 const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
-const users = JSON.parse(localStorage.getItem("users"));
+const users = JSON.parse(localStorage.getItem("users")) || [];
 const userIndex = JSON.parse(localStorage.getItem("userIndex"));
 let activeUser = users[userIndex];
 
-const carDetails = JSON.parse(localStorage.getItem("carDetails"));
+const carDetails = JSON.parse(localStorage.getItem("carDetails")) || [];
 
 class Booking {
   constructor(from, to, date, vechileId) {
@@ -20,7 +20,8 @@ class Booking {
     this.to = to;
     this.date = date;
     this.vechileId = vechileId;
-    this.approved = false
+    this.approved = false;
+    this.completed = false
   }
 }
 

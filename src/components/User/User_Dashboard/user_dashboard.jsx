@@ -1,16 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 //components
-import Bookings from '../User_Booking/Booking_details'
+import Bookings from "../User_Booking/Booking_details";
 import SideBar from "../../utils/SideBar";
 import "./dashboard.css";
+import Card from "../../Home/card";
 //for sideBar
 const linksDetails = [{ title: "Booking", link: "/user/booking" }];
-const activeUser = JSON.parse(localStorage.getItem("users"))[
+const activeUser = (JSON.parse(localStorage.getItem("users")) || [])[
   localStorage.getItem("userIndex")
 ];
 class user_dashboard extends Component {
+  state={
+    activeUser: {},
+    bookings: []
+  }
+  componentDidMount(){
+    this.setState({ bookings: JSON.parse(localStorage.getItem("bookings")) || [] });
+    this.setState({activeUser})
+  }
+  showCards = () => {
+    
+    let cars = JSON.parse(localStorage.getItem("carDetails")) || [];
+    return cars.map((el, i) => (
+      <Card key={i} title={el.model} price={el.price} number={el.num} />
+    ));
+  };
   render() {
     return (
       <div>
@@ -57,7 +72,9 @@ class user_dashboard extends Component {
                     style={{ margin: "0 auto", textAlign: "center" }}
                   >
                     <div className="page-title-heading">
-                      <h2>{activeUser.name}</h2>
+                      <h2>{this.state.activeUser.name ? this.state.activeUser.name : "user" }
+                      
+                      </h2>
                     </div>
                   </div>
                 </div>
@@ -70,20 +87,19 @@ class user_dashboard extends Component {
                     style={{ margin: `0 auto`, textAlign: `center` }}
                   >
                     <h5 className="card-title">
-                      <b>{activeUser.email}</b>
+                      <b>{this.state.activeUser.email}</b>
                     </h5>
                   </div>
                 </div>
                 <div className="app-container app-theme-gray">
-          <div className="app-main">
-                <Bookings/>
-            </div>
-            </div>
+                  <div className="app-main">
+                    {this.state.bookings.length > 0 ? <Bookings style={{paddingLeft: `0px`}}/> : <h1>You have not Booked any car stil now</h1>}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
         <div className="app-drawer-overlay d-none animated fadeIn"></div>
       </div>
     );

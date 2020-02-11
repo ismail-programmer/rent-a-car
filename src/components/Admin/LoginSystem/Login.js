@@ -3,28 +3,33 @@ import { Link } from "react-router-dom";
 import Success from "../../utils/Success";
 
 class Login extends Component {
-  popup = (i,path)=>{
-    document.querySelector(`#success-${i}`).classList.add(`slide-in`)
-    setTimeout(() =>{
-      document.querySelector(`#success-${i}`).classList.remove("slide-in")
-      setTimeout(()=>this.props.history.push(path), 800)
+  popup = (i, path) => {
+    document.querySelector(`#success-${i}`).classList.add(`slide-in`);
+    setTimeout(() => {
+      document.querySelector(`#success-${i}`).classList.remove("slide-in");
+      setTimeout(() => this.props.history.push(path), 800);
     }, 2500);
-  }
+  };
   isCorrect = e => {
-    e.preventDefault()
+    e.preventDefault();
     const email = this.refs.email.value;
     const password = this.refs.password.value;
     const users = JSON.parse(localStorage.getItem("admin")) || [];
-    const index = users.findIndex(el => email === el.email);
-    if (index !== -1) {
-      if (users[index].password === password) {
-        this.popup(1,"/admin/dashboard")
-        this.refs.chkEmail.style.display = `none`;
-        localStorage.setItem("adminIndex", JSON.stringify(index));
-        return true;
+    const index = users.findIndex(el => email === el.email) || -1;
+    if (users[index]) {
+      if (index !== -1) {
+        if (users[index].password === password) {
+          this.popup(1, "/admin/dashboard");
+          this.refs.chkEmail.style.display = `none`;
+          localStorage.setItem("adminIndex", JSON.stringify(index));
+          return true;
+        }
+        this.refs.chkPass.innerHTML = "password is incorrect";
+        return false;
+      } else {
+        this.refs.chkEmail.innerHTML = "user is not registered";
+        return false;
       }
-      this.refs.chkPass.innerHTML = "password is incorrect";
-      return false;
     } else {
       this.refs.chkEmail.innerHTML = "user is not registered";
       return false;
@@ -55,13 +60,13 @@ class Login extends Component {
                         <div className="slider-content">
                           <h3>Rent A Car</h3>
                           <p>
-                          You can avail our service 24/7 for rent a car.It is a good service at all.
-                           If you are willing you can contact Us.
+                            You can avail our service 24/7 for rent a car.It is
+                            a good service at all. If you are willing you can
+                            contact Us.
                           </p>
                         </div>
                       </div>
                     </div>
-                  
                   </div>
                 </div>
               </div>
@@ -80,7 +85,11 @@ class Login extends Component {
                   </h6>
                   <div className="divider row"></div>
                   <div>
-                    <form className="" onSubmit={this.isCorrect}  action="/admin/dashboard">
+                    <form
+                      className=""
+                      onSubmit={this.isCorrect}
+                      action="/admin/dashboard"
+                    >
                       <div className="form-row">
                         <div className="col-md-6">
                           <div className="position-relative form-group">
