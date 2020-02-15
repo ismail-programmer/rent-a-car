@@ -11,7 +11,7 @@ import Edit_Bookings from "./components/Admin/Booking_System/Edit_Bookings";
 import Admin_Dashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import Admin_Booking from "./components/Admin/Booking_System/Admin_Booking";
 
-import Home from "./components/Home/Home";
+// import Home from "./components/Home/Home";
 // import Sidebar from "./components/utils/SideBar";
 import Header from "./components/Layout/Header/Header";
 
