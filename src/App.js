@@ -46,8 +46,7 @@ function App() {
         />
         <Route exact path="/admin/bookings_details" component={Admin_Booking} />
 
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={User_Login} />
         {/* <Route exact path="/header" component={Header} /> */}
         {/* <Route exact path="/sidebar" component={SideBar} /> */}
 
